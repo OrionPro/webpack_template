@@ -1,0 +1,49 @@
+doctype html
+html(class="no-js" lang="ru")
+	head
+		meta(charset = 'utf-8')
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		title
+			block title
+		link(rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon")
+		style(type='text/css').
+			html .loader {
+				background: #fff;
+				bottom: 0;
+				height: 100%;
+				left: 0;
+				position: fixed;
+				right: 0;
+				top: 0;
+				width: 100%;
+				z-index: 9999
+			}
+
+			html .loader .loader_inner {
+				//background-image: url(../img/preloader.gif);
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-color: #fff;
+				height: 60px;
+				width: 60px;
+				margin-top: -30px;
+				margin-left: -30px;
+				left: 50%;
+				top: 50%;
+				position: absolute
+			}
+	body
+		div
+			.loader
+				.loader_inner
+		include ./modal
+		block main
+
+
+		//[if IE 9]>
+			<script src="libs/html5shiv/es5-shim.min.js"></script>
+			<script src="libs/html5shiv/html5shiv.min.js"></script>
+			<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>`
+			<script src="libs/respond/respond.min.js"></script>

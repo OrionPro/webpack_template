@@ -1,0 +1,59 @@
+
+//main_color: #17a9d8
+//main_txt_color: #262626
+//main_bg_color: #fff
+//auxiliary_txt_color: #443133
+//font_RobotoRegular: "RobotoRegular", Arial, sans-serif
+//font_RobotoLight: "RobotoLight", Arial, sans-serif
+//font_RobotoBold: "RobotoBold", Arial, sans-serif
+//font_ROBOTO_BLACK: "ROBOTO-BLACK", Arial, sans-serif
+//font_ROBOTO_THIN: "ROBOTO-THIN", Arial, sans-serif
+
+
+$main_color: #25ca50
+$auxiliary_txt_color: #949292
+$main_txt_color: #fff
+$main_bg_color: #fff
+
+
+$font_RobotoRegular: "RobotoRegular", Arial, sans-serif
+$font_RobotoLight: "RobotoLight", Arial, sans-serif
+$font_RobotoBold: "RobotoBold", Arial, sans-serif
+$font_ROBOTO_BLACK: "ROBOTO-BLACK", Arial, sans-serif
+$font_ROBOTO_THIN: "ROBOTO-THIN", Arial, sans-serif
+
+
+
+@mixin font($color, $fz, $ff, $lh: 1.6)
+	color: $color
+	font: $fz $ff
+	line-height: $lh
+
+
+%main_btn
+	background-color: $main_color				
+	border-radius: 5px
+	border: none
+	transition: 0.5s
+	@include font(#fff, 18px, $font_RobotoLight) 
+%main_btn_hover
+	background-color: #2ae05a
+%main_btn_active
+	background-color: #2ae05a
+%main_btn_focus
+	background-color: #2ae05a
+	outline: 0	
+
+
+
+%flex 
+	display: flex
+	align-items: center
+	justify-content: center
+
+	
+			
+
+
+
+
