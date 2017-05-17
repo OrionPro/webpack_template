@@ -1,11 +1,6 @@
-import './blog.sass';
 import 'normalize.css';
+import './blog.sass';
 
-import createMenu from '../../components/menu/menu';
-import createMenu2 from '../../components/menu/menu2';
-import libs from '../../libs/libs.js';
-
-var menu = createMenu(['Главная','Блог'], 'menu');
-document.body.appendChild(menu);
-
-console.log('in blog.js')
+import slidebars from '../../js/slidebars.min.js';
+//import functions from '../../js/_functions.js';
+console.log('in blog.js');
