@@ -6,6 +6,7 @@ const pug = require('./webpack/pug');
 const devserver = require('./webpack/devserver');
 const sass = require('./webpack/sass');
 const css = require('./webpack/css');
+const fonts = require('./webpack/fonts');
 const js = require('./webpack/js');
 const extractCSS = require('./webpack/css.extract');
 const uglifyJS = require('./webpack/js.uglify');
@@ -52,7 +53,8 @@ const common = merge([
 		]
 	},
 	pug(),
-	images()
+	images(),
+	fonts()
 ]);
 
 module.exports = function(env) {

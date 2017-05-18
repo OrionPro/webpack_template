@@ -1,5 +1,6 @@
 @import "vars.sass"
-
+@import "fonts.sass"
+@import "../libs/slidebars.min"
 // loads Libs SASS
 
 html, body
@@ -161,7 +162,7 @@ li
 			padding-left: 10px
 			@include fz(15)
 			line-height: 35px
-			font-family: $font_MyriadPro_Regular
+			font-family: $font_RobotoRegular
 			background-color: #F4F4F4
 			border: 1px solid #C8C8C8
 			-webkit-border-radius: 5px
@@ -198,7 +199,7 @@ li
 		margin-left: 5px
 		text-align: left
 		display: block
-		font-family: $font_MyriadPro_Bold
+		font-family: $font_RobotoRegular
 		@include fz(14)
 		color: $main_txt_color
 		&.active
@@ -222,7 +223,7 @@ li
 		display: none
 		color: $main_color
 		@include fz(24)
-		font-family: $font_MyriadPro_Bold
+		font-family: $font_RobotoRegular
 		&.active
 			display: block
 	input[type=submit]
@@ -256,7 +257,7 @@ li
 				border-top: none
 				cursor: pointer
 				display: block
-				@include font($auxiliary_txt_color, 18,  $font_MyriadPro_Bold, 1.2)
+				@include font($auxiliary_txt_color, 18,  $font_RobotoRegular, 1.2)
 				padding: 7px 15px 7px 25px
 				&:hover
 					background-color: rgba(0,0,0,0.2)
@@ -270,7 +271,7 @@ li
 			padding-right: 30px
 			margin-bottom: 30px
 			display: block
-			@include font(#000, 18,  $font_MyriadPro_Bold, 1.2)
+			@include font(#000, 18,  $font_RobotoRegular, 1.2)
 			background-color: #F4F4F4
 			line-height: 40px
 			box-shadow: 0 1px 0 rgba(0,0,2,.28)
@@ -328,7 +329,7 @@ li
 		padding-left: 10px
 		@include fz(15)
 		line-height: 35px
-		font-family: $font_MyriadPro_Regular
+		font-family: $font_RobotoRegular
 		background-color: #F4F4F4
 		border: 1px solid #C8C8C8
 		-webkit-border-radius: 5px
@@ -381,7 +382,7 @@ li
 	a
 		color: #fff
 		@include fz(34)
-		font-family: $font_MyriadPro_Regular
+		font-family: $font_ROBOTO_BLACK
 		&:hover
 			text-decoration: none
 
@@ -699,5 +700,5 @@ nav[canvas]
 
 
 //ALWAYS END
-//@import "media"
+@import "media"
 

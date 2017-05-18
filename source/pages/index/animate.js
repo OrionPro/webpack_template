@@ -32,7 +32,6 @@ class Animation {
 	}
 }
 
-
 var anim = new Animation;
 
 $(window).scroll(function() {
