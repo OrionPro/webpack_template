@@ -1,7 +1,9 @@
 // подключение functions.js
-// import '../js/slidebars.min.js';
+
+
 
 $(function() {
+
 	//SVG Fallback
 	// if(!Modernizr.svg) {
 	//  $("img[src*='svg']").attr("src", function() {
@@ -34,7 +36,7 @@ $(window).scroll(function() {
 
 // Initialize Slidebars
 (function($) {
-	var slidebars = require("../js/slidebars.min.js");
+	var slidebars = require("../libs/slidebars.min.js");
 	// Initialize Slidebars
 	var controller = new slidebars();
 	controller.init();
@@ -88,7 +90,8 @@ $(window).scroll(function() {
 })($);
 
 $(document).ready(function() {
-	var MobileDetect = require("mobile-detect");
+	// var MobileDetect = require("mobile-detect");
+	var MobileDetect = require("../libs/libs").mobileDetect();
 	var md = new MobileDetect(window.navigator.userAgent);
 
 	if (md.userAgent() == "Safari" && md.mobile() == "iPhone" || md.mobile() == "iPad") {

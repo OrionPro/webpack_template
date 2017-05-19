@@ -1,4 +1,6 @@
 // подключение animate.js
+require("../../libs/libs").greenSock();
+
 class Animation {
 	constructor() {
 		this.tl1 = new TimelineMax();

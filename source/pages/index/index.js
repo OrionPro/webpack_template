@@ -1,8 +1,11 @@
-import 'normalize.css';
 import './index.sass';
 
+require("../../libs/libs").jqueryui();
+require("../../libs/libs").matchMedia();
+require("../../libs/libs").Animate_css();
 
-import libs from '../../libs/_libs.js';
+
+
 import animate from '../../pages/index/animate.js';
 import functions from '../../js/_functions.js';
 

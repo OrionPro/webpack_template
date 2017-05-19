@@ -7,6 +7,7 @@ html(class="no-js" lang="ru")
 		title
 			block title
 		link(rel="shortcut icon" href=require("../../img/favicon.png") type="image/x-icon")
+		include ../libs/bootstrap.min.html
 		style(type='text/css').
 			html .loader {
 				background: #fff;
@@ -20,15 +21,14 @@ html(class="no-js" lang="ru")
 				z-index: 9999
 			}
 			html .loader .loader_inner {
-				background-image: url('../img/preloader.gif');
 				background-size: cover;
 				background-repeat: no-repeat;
 				background-position: center center;
 				background-color: #fff;
-				height: 60px;
-				width: 60px;
-				margin-top: -30px;
-				margin-left: -30px;
+				height: 200px;
+				width: 200px;
+				margin-top: -100px;
+				margin-left: -100px;
 				left: 50%;
 				top: 50%;
 				position: absolute
@@ -37,6 +37,7 @@ html(class="no-js" lang="ru")
 		div
 			.loader
 				.loader_inner
+					include ../img/preloader.html
 		block main
 
 
