@@ -1,7 +1,5 @@
 // подключение functions.js
 
-
-
 $(function() {
 
 	//SVG Fallback
