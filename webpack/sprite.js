@@ -4,14 +4,20 @@ module.exports = function() {
 	return {
 		module: {
 			loaders: [
-				{test: /\.sass$/, loaders: [
+				{
+					test: /\.sass$/,
+					loaders: [
 					'style-loader',
 					'css-loader',
 					'sass-loader'
-				]},
-				{test: /\.png$/, loaders: [
+				]
+				},
+				{
+					test: /\.png$/,
+					loaders: [
 					'file-loader?name=i/[hash].[ext]'
-				]}
+				]
+				}
 			]
 		},
 		resolve: {
@@ -29,7 +35,8 @@ module.exports = function() {
 					css: path.resolve(__dirname, '../source/sass/sprite.sass')
 				},
 				apiOptions: {
-					cssImageRef: "sprite.png"
+					cssImageRef: "sprite.png",
+					padding: 5
 				}
 			})
 		]
