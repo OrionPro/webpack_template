@@ -1,3 +1,4 @@
+import '../../pages/index/main.sass';
 import './index.sass';
 
 require("../../libs/libs").jqueryui();
@@ -6,7 +7,7 @@ require("../../libs/libs").Animate_css();
 
 
 
-import animate from '../../pages/index/animate.js';
+import animate from '../../js/animate';
 import functions from '../../js/_functions.js';
 
 
