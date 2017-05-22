@@ -1,5 +1,8 @@
-@import "../../sass/main.sass"
-
+@import "../../sass/vars"
 h1
-	color: #fff
+	color: $main_color
+	font-family: $font_RobotoRegular
 	margin-top: 10px
+	@include sprite($header_mail)
+.header_logo
+	@include sprite($modal-select-traingle)

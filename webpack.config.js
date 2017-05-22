@@ -11,6 +11,7 @@ const js = require('./webpack/js');
 const extractCSS = require('./webpack/css.extract');
 const uglifyJS = require('./webpack/js.uglify');
 const images = require('./webpack/images');
+const sprite = require('./webpack/sprite');
 
 const PATHS = {
 	source: path.join(__dirname, 'source'),
@@ -53,6 +54,7 @@ const common = merge([
 		]
 	},
 	pug(),
+	sprite(),
 	images(),
 	fonts()
 ]);

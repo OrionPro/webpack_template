@@ -1,5 +1,5 @@
 // подключение animate.js
-require("../../libs/libs").greenSock();
+require("../libs/libs").greenSock();
 
 class Animation {
 	constructor() {
