@@ -2,6 +2,33 @@ extends ../base
 block title
 	| Blog page
 block main
-	.test.
-		Test
-	h1 page blog-pug
+	include ../modal
+	header(class="header")
+		.container
+			.row
+				.header_logo
+					a(href="/" class="logo").
+						Ваш логотип
+				nav.header_nav
+					ul
+						li
+							a(href="#") Примеры кухонь
+						li
+							a(href="#") Преимущества
+						li
+							a(href="#") Отзывы
+						li
+							a(href="tel:73842596168") +7 3842 59 61 68
+				.header_modal
+					a(data-modal="modal-1" data-info="Обратный звонок" href="#" class="modal active") Обратный звонок
+				.header_modal
+					a(data-modal="modal-3" data-info="Обратный звонок" href="#" class="modal active") Мобильное меню
+				.header_title
+					h1 Страница Blog
+					p для максимального удобства
+				.header_bot_txt
+					p Более
+						span  400
+						|   довольных клиентов за
+						span  8 лет
+						|  успешной работы!

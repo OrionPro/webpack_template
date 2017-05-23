@@ -1,8 +1,9 @@
-import '../../pages/index/main.sass';
+import '../../sass/main.sass';
 import './index.sass';
 
 require("../../libs/libs").jqueryui();
 require("../../libs/libs").matchMedia();
+require("../../libs/libs").waypoint();
 require("../../libs/libs").Animate_css();
 
 

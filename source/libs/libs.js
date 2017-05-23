@@ -18,9 +18,14 @@ exports.matchMedia = function () {
 	return require("../libs/matchMedia");
 };
 
+exports.waypoint = function () {
+	return require("../libs/waypoints.min");
+};
+
 exports.Animate_css = function () {
 	return require("../libs/Animate_css");
 };
+
 
 
 

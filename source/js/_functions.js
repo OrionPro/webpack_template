@@ -200,7 +200,9 @@ $(document).ready(function() {
 
 	});
 	//  Отправка форм
-	$("form:not('#form-file')").submit(function() { // перехватываем все при событии отправки
+	$("form:not('#form-file')").submit(function(e) { // перехватываем все при событии отправки
+		e.preventDefault();
+
 		var form = $(this); // запишем форму, чтобы потом не было проблем с this
 		var error = [];
 		form.find('.modal_form_input').each(function() { // пробежим по каждому полю в форме

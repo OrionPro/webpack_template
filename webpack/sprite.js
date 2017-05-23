@@ -1,7 +1,11 @@
 const SpritesmithPlugin = require('webpack-spritesmith');
 const path = require('path');
+
 module.exports = function() {
 	return {
+		resolve: {
+			modules: ["node_modules", "spritesmith"]
+		},
 		plugins: [
 			new SpritesmithPlugin({
 				src: {
@@ -9,30 +13,11 @@ module.exports = function() {
 					glob: '*.png'
 				},
 				target: {
-					image: path.resolve(__dirname, '../source/pages/index/sprite.png'),
+					image: path.resolve(__dirname, '../source/spritesmith/sprite.png'),
 					css: path.resolve(__dirname, '../source/sass/sprite.sass')
 				},
 				apiOptions: {
-					cssImageRef: "sprite.png"
-				},
-				spritesmithOptions: {
-					padding: 2
-				},
-				spritesmithConfig: {
-					algorithm: 'binary-tree'
-				}
-			}),
-			new SpritesmithPlugin({
-				src: {
-					cwd: path.resolve(__dirname, '../source/img/sprite'),
-					glob: '*.png'
-				},
-				target: {
-					image: path.resolve(__dirname, '../source/pages/blog/sprite.png'),
-					css: path.resolve(__dirname, '../source/sass/sprite.sass')
-				},
-				apiOptions: {
-					cssImageRef: "sprite.png"
+					cssImageRef: "~sprite/sprite.png"
 				},
 				spritesmithOptions: {
 					padding: 2

@@ -32,6 +32,14 @@ const common = merge([
 			'jquery-mousewheel': 'jquery-mousewheel',
 			'../TweenLite': 'TweenLite',
 		},
+		resolve: {
+			modules: ["node_modules", "source"],
+			alias: {
+				'sprite': path.resolve(__dirname, 'source/spritesmith/'),
+				'img': path.resolve(__dirname, 'source/img/'),
+				'fonts': path.resolve(__dirname, 'source/fonts/')
+			}
+		},
 		plugins: [
 			new HtmlWebpackPlugin({
 				filename: 'index.html',
@@ -49,7 +57,7 @@ const common = merge([
 			new webpack.ProvidePlugin({
 				$: 'jquery',
 				jQuery: 'jquery',
-				"window.jquery": 'jquery',
+				'window.jQuery': 'jquery'
 			})
 		]
 	},
