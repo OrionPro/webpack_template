@@ -41,16 +41,37 @@
 					input(type="hidden" name="form_type" value="modal")
 					input(type="submit" value="Отправить")
 	.overlay
-
-//Модальное окно success
-//<div class="popup" data-modal="modal-res">
-//	<div class="dm-table">
-//		<div class="dm-cell">
-//			<div class="dm-modal">
-//				<p class='success_mail'>Заявка отправлена</p>
-//			</div>
-//		</div>
-//	</div>
-//</div>
+// Модальное окно success
+.popup(data-modal='modal-res')
+	.dm-table
+		.dm-cell
+			.dm-modal
+				p.success_mail Заявка отправлена
+// вариант меню на мобильном
+.popup.pop3(data-modal='modal-3')
+	.dm-table
+		.dm-cell
+			.dm-modal
+				nav.header_nav_mobile
+					ul
+						li
+							a(href='#') Примеры кухонь
+						li
+							a(href='#') Преимущества
+						li
+							a(href='#') Отзывы
+						li
+							a(href='tel:73842596168') +7 3842 59 61 68
+						li
+							a(href='#') Примеры кухонь
+						li
+							a(href='#') Преимущества
+						li
+							a(href='#') Отзывы
+						li
+							a(href='#') Примеры кухонь
+						li
+							a(href='#') Преимущества
+	.overlay
 
 

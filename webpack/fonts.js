@@ -3,7 +3,7 @@ module.exports = function(paths) {
 		module: {
 			rules: [
 				{
-					test: /\.(eot|ttf|woff)$/,
+					test: /\.(eot|ttf|woff|woff2)$/,
 					include: paths,
 					loader: 'file-loader',
 					options: {

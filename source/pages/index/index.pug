@@ -11,35 +11,153 @@ block main
 					i.nav-line
 					i.nav-line
 					i.nav-line
-	header(class="header")
-		.container
-			.row
-				.header_logo
-					a(href="/" class="logo").
-						Ваш логотип
-				nav.header_nav
-					ul
-						li
-							a(href="#") Примеры кухонь
-						li
-							a(href="#") Преимущества
-						li
-							a(href="#") Отзывы
-						li
-							a(href="tel:73842596168") +7 3842 59 61 68
-				.header_modal
-					a(data-modal="modal-1" data-info="Обратный звонок" href="#" class="modal active") Обратный звонок
-				.header_modal
-					a(data-modal="modal-3" data-info="Обратный звонок" href="#" class="modal active") Мобильное меню
-				.header_title
-					h1
-						span ФУНКЦИОНАЛЬНЫЕ
-						| ЛЕНДИНГИ НА ЗАКАЗ
-					p для максимального удобства
-				.header_bot_txt
-					p Более
-						span  400
-						|   довольных клиентов за
-						span  8 лет
-						|  успешной работы!
+	div(canvas='container')
+		header(class="header")
+			.container
+				.row
+					.header_logo
+						a(href="/" class="logo").
+							Ваш логотип
+					nav.header_nav
+						ul
+							li
+								a(href="#") Примеры кухонь
+							li
+								a(href="#") Преимущества
+							li
+								a(href="#") Отзывы
+							li
+								a(href="tel:73842596168") +7 3842 59 61 68
+					.header_modal
+						a(data-modal="modal-1" data-info="Обратный звонок" href="#" class="modal active") Обратный звонок
+					.header_modal
+						a(data-modal="modal-3" data-info="Обратный звонок" href="#" class="modal active") Мобильное меню
+					.header_title
+						h1
+							span ФУНКЦИОНАЛЬНЫЕ
+							| ЛЕНДИНГИ НА ЗАКАЗ
+						p для максимального удобства
+					.header_bot_txt
+						p Более
+							span  400
+							|   довольных клиентов за
+							span  8 лет
+							|  успешной работы!
+		// Секция  our_advantages
+		section#our_advantages.our_advantages
+			.container
+				.row
+					h2 Наши преимущества
+					.clearfix
+						.our_advantages_item.col-lg-4.col-md-6
+							.our_advantages_item_img
+								i.fa.fa-users
+							h3 Заголовок
+							p Индивидуальный подход к каждому клиенту
+						.our_advantages_item.col-lg-4.col-md-6
+							.our_advantages_item_img
+								i.fa.fa-diamond
+							h3 Заголовок
+							p Неповторимость и практичность каждого проекта мебели
+						.our_advantages_item.col-lg-4.col-md-6
+							.our_advantages_item_img
+								i.fa.fa-list-ol
+							h3 Заголовок
+							p Многообразие материалов и стилевых решений
+						.our_advantages_item.col-lg-4.col-md-6
+							.our_advantages_item_img
+								i.fa.fa-pencil
+							h3 Заголовок
+							p Для вас бесплатно: замер, дизайн-проект, доставка и монтаж
+						.our_advantages_item.col-lg-4.col-md-6
+							.our_advantages_item_img
+								i.fa.fa-credit-card-alt
+							h3 Заголовок
+							p Возможность оформления мебели в кредит
+						.our_advantages_item.col-lg-4.col-md-6
+							.our_advantages_item_img
+								i.fa.fa-wrench
+							h3 Заголовок
+							p Изготовление мебели только из высококачественных материалов
+		// Секция main_content
+		section.main_content
+			.container
+				.row
+					div Пример checkbox
+					label.check.noselect
+						input(type='checkbox')
+						i.fa.fa-1.fa-square-o
+						i.fa.fa-2.fa-check-square-o
+						span первый чек
+					label.check.noselect
+						input(type='checkbox')
+						i.fa.fa-1.fa-square-o
+						i.fa.fa-2.fa-check-square-o
+						span второй чек
+					div Пример radio button
+					label.radio.noselect
+						input(type='radio', name='radio')
+						i.fa.fa-1.fa-square-o
+						i.fa.fa-2.fa-check-square-o
+						span первый чек
+					label.radio.noselect
+						input(type='radio', name='radio', checked='')
+						i.fa.fa-1.fa-square-o
+						i.fa.fa-2.fa-check-square-o
+						span второй чек
+		// Секция  ask-form-title
+		section.intermediate
+			.container
+				.intermediate_title
+					h3 Заполните форму и мы бесплатно перезвоним и ответим на ваши вопросы
+				.intermediate_wrap
+					form
+						.intermediate_item.col-lg-3.col-md-4.col-sm-4
+							.modal_form_input_wrap
+								.modal_input_error
+									| Заполните поле
+									.modal_error_triangle
+									.modal_error_chest_img
+								i.fa.fa-check
+								input.modal_form_input(name='name', type='text', placeholder='Имя')
+						.intermediate_item.col-lg-3.col-md-4.col-sm-4
+							.modal_form_input_wrap
+								.modal_input_error
+									| Заполните поле
+									.modal_error_triangle
+									.modal_error_chest_img
+								i.fa.fa-check
+								input.modal_form_email(name='email', type='text', placeholder='Почта')
+						.intermediate_item.col-lg-3.col-md-4.col-sm-4
+							.modal_form_input_wrap
+								.modal_input_error
+									| Заполните поле
+									.modal_error_triangle
+									.modal_error_chest_img
+								i.fa.fa-check
+								input.modal_form_phone(name='phone', type='text', placeholder='Телефон')
+						input(type='hidden', name='form_name', value='')
+						input(type='hidden', name='form_type', value='normal')
+						input.col-lg-3(type='submit', value='Записаться')
+	div(off-canvas='id-1 left shift')
+		nav.header_nav_mobile
+			ul.menu
+				li
+					a(href='#') 1
+				li
+					a(href='#') Преимущества
+				li
+					a(href='#') Отзывы
+				li
+					a(href='tel:73842596168') +7 3842 59 61 68
+				li
+					a(href='#') Преимущества
+				li
+					a(href='#') Отзывы
+				li
+					a(href='#') Примеры кухонь
+	div(off-canvas='id-2 right push')
+	div(off-canvas='id-3 top overlay')
+	div(off-canvas='id-4 bottom shift')
+
 
