@@ -2,33 +2,72 @@ extends ../base
 block title
 	| Blog page
 block main
-	include ../modal
-	header(class="header")
-		.container
-			.row
-				.header_logo
-					a(href="/" class="logo").
-						Ваш логотип
-				nav.header_nav
-					ul
-						li
-							a(href="#") Примеры кухонь
-						li
-							a(href="#") Преимущества
-						li
-							a(href="#") Отзывы
-						li
-							a(href="tel:73842596168") +7 3842 59 61 68
-				.header_modal
-					a(data-modal="modal-1" data-info="Обратный звонок" href="#" class="modal active") Обратный звонок
-				.header_modal
-					a(data-modal="modal-3" data-info="Обратный звонок" href="#" class="modal active") Мобильное меню
-				.header_title
-					h1 Страница Blog
-					p для максимального удобства
-				.header_bot_txt
-					p Более
-						span  400
-						|   довольных клиентов за
-						span  8 лет
-						|  успешной работы!
+	body.blog
+		div
+			.loader
+				.loader_inner
+					include ../../img/preloader.svg
+		include ../modal
+		nav(canvas="" class="")
+			.mnu_btn
+				label(id="nav-button-label")
+					#nav-lines
+						i.nav-line
+						i.nav-line
+						i.nav-line
+						i.nav-line
+		div(canvas='container')
+			header(class="header")
+				.container
+					.row
+						.header_logo
+							a(href="/" class="logo").
+								Ваш логотип
+						nav.header_nav
+							ul
+								li
+									a(href="#") Примеры кухонь
+								li
+									a(href="#") Преимущества
+								li
+									a(href="#") Отзывы
+								li
+									a(href="tel:73842596168") +7 3842 59 61 68
+						.header_modal
+							a(data-modal="modal-1" data-info="Обратный звонок" href="#" class="modal active") Обратный звонок
+						.header_modal
+							a(data-modal="modal-3" data-info="Обратный звонок" href="#" class="modal active") Мобильное меню
+						.header_title
+							h1 Страница Blog
+							p для максимального удобства
+						.header_bot_txt
+							p Более
+								span  400
+								|   довольных клиентов за
+								span  8 лет
+								|  успешной работы!
+		div(off-canvas='id-1 left shift')
+			nav.header_nav_mobile
+				ul.menu
+					li
+						a(href='#') 1
+					li
+						a(href='#') Преимущества
+					li
+						a(href='#') Отзывы
+					li
+						a(href='tel:73842596168') +7 3842 59 61 68
+					li
+						a(href='#') Преимущества
+					li
+						a(href='#') Отзывы
+					li
+						a(href='#') Примеры кухонь
+		div(off-canvas='id-2 right push')
+		div(off-canvas='id-3 top overlay')
+		div(off-canvas='id-4 bottom shift')
+		//[if IE 9]>
+			<script src="libs/html5shiv/es5-shim.min.js"></script>
+			<script src="libs/html5shiv/html5shiv.min.js"></script>
+			<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>`
+			<script src="libs/respond/respond.min.js"></script>
