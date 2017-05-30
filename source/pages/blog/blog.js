@@ -1,5 +1,6 @@
 import '../../sass/main.sass';
 import './blog.sass';
+import '../../sass/_media.sass';
 
 require("../../libs/libs").jqueryui();
 require("../../libs/libs").matchMedia();
