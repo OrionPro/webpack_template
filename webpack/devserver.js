@@ -4,7 +4,6 @@ module.exports = function () {
 		devServer: {
 			stats: 'errors-only',
 			port: 9000,
-			inline: true,
 			hot: true
 		}
 	}
