@@ -37,7 +37,8 @@ const common = merge([
 			alias: {
 				'sprite': path.resolve(__dirname, 'source/spritesmith/'),
 				'img': path.resolve(__dirname, 'source/img/'),
-				'fonts': path.resolve(__dirname, 'source/fonts/')
+				'fonts': path.resolve(__dirname, 'source/fonts/'),
+				'sass': path.resolve(__dirname, 'source/sass/')
 			}
 		},
 		plugins: [
@@ -58,7 +59,9 @@ const common = merge([
 				$: 'jquery',
 				jQuery: 'jquery',
 				'window.jQuery': 'jquery'
-			})
+			}),
+			new webpack.HotModuleReplacementPlugin(),
+			new webpack.NamedModulesPlugin()
 		]
 	},
 	pug(),
@@ -79,10 +82,10 @@ module.exports = function(env) {
 	if (env === 'development'){
 		return merge([
 			common,
-			devserver(),
 			js(),
 			css(),
-			sass()
+			sass(),
+			devserver()
 		]);
 	}
 };

@@ -1,6 +1,6 @@
-@import "../../sass/vars"
+@import "../../sass/vars.sass"
+.close
+	top: 10px
 h1
-	color: $main_color
-	font-family: $font_RobotoRegular
-	margin-top: 10px
-.header_logo
+	@include font($main_color, 54, $font_ROBOTO_THIN, 1.2)
+
