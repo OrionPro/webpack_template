@@ -1,4 +1,6 @@
 **Специально для orion & melfori**
  Установка:
   npm i
-  npm start
+ Запуск:
+  npm start		(для dev)
+  npm build		(для prod)
