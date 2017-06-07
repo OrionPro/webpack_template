@@ -3,7 +3,6 @@ import './index.sass';
 import '../../sass/_media.sass';
 import '../../pages/index/index.pug';
 
-
 require("../../libs/libs").jqueryui();
 require("../../libs/libs").matchMedia();
 require("../../libs/libs").waypoint();
@@ -44,6 +43,9 @@ $(document).ready( function() {
 	}
 	if (get_name_browser() == "Google Chrome") {
 		console.log("Это Хром");
+	}
+	if (get_name_browser() == "Firefox") {
+		console.log("Это Firefox");
 	}
 	// для инициализации tooltips
 	// $( document ).tooltip({
