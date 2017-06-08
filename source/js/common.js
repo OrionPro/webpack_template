@@ -1,19 +1,11 @@
 
-import '../../sass/main.sass';
-import './index.sass';
-import '../../sass/_media.sass';
-import '../../pages/index/index.pug'; //это для обновления страницы при hotreload - при npm build убрать
+require("../libs/libs").jqueryui();
+require("../libs/libs").matchMedia();
+require("../libs/libs").waypoint();
+require("../libs/libs").Animate_css();
 
-require("../../libs/libs").jqueryui();
-require("../../libs/libs").matchMedia();
-require("../../libs/libs").waypoint();
-require("../../libs/libs").Animate_css();
-
-
-
-import animate from '../../js/animate';
-import functions from '../../js/_functions.js';
-import common from '../../js/common';
+import animate from '../js/animate';
+import functions from '../js/_functions.js';
 
 $(document).ready( function() {
 
@@ -45,9 +37,6 @@ $(document).ready( function() {
 	}
 	if (get_name_browser() == "Google Chrome") {
 		console.log("Это Хром");
-	}
-	if (get_name_browser() == "Firefox") {
-		console.log("Это Firefox");
 	}
 	// для инициализации tooltips
 	// $( document ).tooltip({
@@ -105,7 +94,3 @@ $(window).resize(function() {
 $(window).scroll(function() {
 
 });
-
-
-$(".loader_inner").fadeOut();
-$(".loader").fadeOut("fast");

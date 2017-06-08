@@ -9,6 +9,7 @@ require("../../libs/libs").Animate_css();
 
 import animate from '../../js/animate_blog';
 import functions from '../../js/_functions.js';
+import common from '../../js/common';
 
 console.log('in blog.js');
 
