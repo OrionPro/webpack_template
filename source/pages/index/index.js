@@ -1,7 +1,6 @@
 
 import '../../sass/main.sass';
 import './index.sass';
-import '../../sass/_media.sass';
 import '../../pages/index/index.pug'; //это для обновления страницы при hotreload - при npm build убрать
 
 require("../../libs/libs").jqueryui();
