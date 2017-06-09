@@ -13,6 +13,7 @@ require("../../libs/libs").Animate_css();
 import animate from '../../js/animate';
 import functions from '../../js/_functions.js';
 import common from '../../js/common';
+import App from '../../js/react';
 
 $(document).ready( function() {
 
