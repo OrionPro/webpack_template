@@ -26,6 +26,12 @@ exports.Animate_css = function () {
 	return require("../libs/Animate_css");
 };
 
+exports.animate_modal = function () {
+	return require("../libs/anim-modal.css");
+};
 
+exports.animate_modal_js = function () {
+	return require("../libs/anim-modal");
+};
 
 

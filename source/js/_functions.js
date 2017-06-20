@@ -154,7 +154,7 @@ $(document).ready(function() {
 		var id = $(this).data('modal');
 		var txt = $(this).data('info');
 		// var title =  $(this).data('title'); // для изменения title в модалке
-		$(".popup[data-modal=" + id + "]").toggle("fade", 200).find("form").css('display', 'block');
+		$(".popup[data-modal=" + id + "]").toggle("fade", 1500).find("form").css('display', 'block');
 		$(".popup[data-modal=" + id + "] input[name=form_name]").val(txt);
 		// $(".popup[data-modal="+id+"] h2").html(title); // прописать в ссылку data-title="нужный title"
 
@@ -168,14 +168,14 @@ $(document).ready(function() {
 	});
 	// overlay для закрытия
 	$(".overlay").click(function() {
-		$(this).parent().toggle("drop", { direction: "up" }, 200);
+		$(this).parent().toggle("fade", 1000);
 		$("body").css({ "overflow": "inherit", "padding-right": "0" });
 		$(".dm-modal .modal_form_input_wrap .modal_input_error").hide();
 	});
 	// закрываем модальное окно на крестик
 	$(".popup .close").click(function(e) {
 		e.preventDefault();
-		$(this).parents(".popup").hide("drop", { direction: "up" }, 200);
+		$(this).parents(".popup").hide("fade", 1000);
 		$("body").css({ "overflow": "inherit", "padding-right": "0" });
 		$(".dm-modal .modal_form_input_wrap .modal_input_error").hide();
 	});

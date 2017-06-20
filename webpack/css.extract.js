@@ -17,6 +17,7 @@ module.exports = function(paths) {
 					test: /\.css$/,
 					include: paths,
 					use: ExtractTextPlugin.extract({
+						publicPath: '../',
 						fallback: 'style-loader',
 						use: ['css-loader?minimize=true','postcss-loader'],
 					}),

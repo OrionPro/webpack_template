@@ -4,7 +4,7 @@ require("../libs/libs").matchMedia();
 require("../libs/libs").waypoint();
 require("../libs/libs").Animate_css();
 
-import animate from '../js/animate';
+
 import functions from '../js/_functions.js';
 
 $(document).ready( function() {

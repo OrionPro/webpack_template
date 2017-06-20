@@ -2,12 +2,16 @@ extends ../base
 block title
 	| Index page
 block main
-	body.index
+	// второй класс у body это анимация на модалке (animated-transition-effects гуглануть или спросить меня, убрав класс вернётся обычная анимация модалки, без изысков)
+	body.index.ink-transition
 		div
 			.loader
 				.loader_inner
 					include ../../img/preloader.svg
 		include ../modal
+		// Элемент cd-transition-layer это тоже для прикольной анимации модалки
+		.cd-transition-layer
+			.bg-layer
 		nav(canvas="" class="")
 			.mnu_btn
 				label(id="nav-button-label")

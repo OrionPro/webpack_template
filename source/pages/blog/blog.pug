@@ -2,12 +2,14 @@ extends ../base
 block title
 	| Blog page
 block main
-	body.blog
+	body.blog.extinguisher-transition
 		div
 			.loader
 				.loader_inner
 					include ../../img/preloader.svg
 		include ../modal
+		.cd-transition-layer
+			.bg-layer
 		nav(canvas="" class="")
 			.mnu_btn
 				label(id="nav-button-label")
