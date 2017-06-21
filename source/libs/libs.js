@@ -6,6 +6,22 @@ exports.mobileDetect = function () {
 	return require("mobile-detect");
 };
 
+exports.tooltipster = function () {
+	return require("tooltipster");
+};
+
+exports.tooltipster_main_css = function () {
+	return require("../libs/tooltipster.main.min.css");
+};
+
+exports.tooltipster_bundle_css = function () {
+	return require("../libs/tooltipster.bundle.min.css");
+};
+
+exports.jqueryValidation = function () {
+	return require("jquery-validation");
+};
+
 exports.greenSock = function () {
 	return require("../libs/greenSock");
 };

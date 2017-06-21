@@ -1,6 +1,6 @@
 // подключение functions.js
 
-$(function() {
+$(function () {
 
 	//SVG Fallback
 	// if(!Modernizr.svg) {
@@ -10,9 +10,9 @@ $(function() {
 	// };
 });
 //изменяется - для плавной обратной анимации animate.css*/
-$(window).scroll(function() {
+$(window).scroll(function () {
 	// для правильной рабоы надо прописать в блок которому присваивается анимация атрибут data-anim="fadeInLeft" с названием анимации
-	$('.animated').each(function() {
+	$('.animated').each(function () {
 		var imagePos = $(this).offset().top;
 		var imageHght = $(this).outerHeight();
 		var topOfWindow = $(window).scrollTop() + 40;
@@ -33,14 +33,14 @@ $(window).scroll(function() {
 });
 
 // Initialize Slidebars
-(function($) {
+(function ($) {
 	var slidebars = require("../libs/slidebars.min.js");
 	// Initialize Slidebars
 	var controller = new slidebars();
 	controller.init();
 
 	// Toggle Slidebars
-	$('#nav-button-label').on('click', function(event) {
+	$('#nav-button-label').on('click', function (event) {
 		// Stop default action and bubbling
 		event.stopPropagation();
 		event.preventDefault();
@@ -50,7 +50,7 @@ $(window).scroll(function() {
 	});
 
 	// Close Slidebar links
-	$('[off-canvas] a').on('click', function(event) {
+	$('[off-canvas] a').on('click', function (event) {
 		event.preventDefault();
 		event.stopPropagation();
 
@@ -60,21 +60,21 @@ $(window).scroll(function() {
 		$("#nav-button-label").removeClass("nav-on");
 		$("#nav-button-label .nav-line").removeClass("active");
 		$("html,body").removeClass("slidebars");
-		controller.close(function() {
+		controller.close(function () {
 			window.open(url, target);
 		});
 	});
 
 	// Add close class to canvas container when Slidebar is opened
-	$(controller.events).on('opening', function(event) {
+	$(controller.events).on('opening', function (event) {
 		$('[canvas]').addClass('js-close-any');
 	});
 	// Add close class to canvas container when Slidebar is opened
-	$(controller.events).on('closing', function(event) {
+	$(controller.events).on('closing', function (event) {
 		$('[canvas]').removeClass('js-close-any');
 	});
 	// Close any
-	$(document).on('click', '.js-close-any', function(event) {
+	$(document).on('click', '.js-close-any', function (event) {
 		if (controller.getActiveSlidebar()) {
 			event.preventDefault();
 			event.stopPropagation();
@@ -87,7 +87,7 @@ $(window).scroll(function() {
 	});
 })($);
 
-$(document).ready(function() {
+$(document).ready(function () {
 	// var MobileDetect = require("mobile-detect");
 	var MobileDetect = require("../libs/libs").mobileDetect();
 	var md = new MobileDetect(window.navigator.userAgent);
@@ -98,12 +98,12 @@ $(document).ready(function() {
 
 
 	// Select в модальном окне
-	$(document).click(function() {
+	$(document).click(function () {
 		$('.slct').removeClass('active');
 		$('.slct_arrow').removeClass('active');
 		$('.slct').parent().find('.drop').slideUp("fast");
 	});
-	$('.slct').click(function() {
+	$('.slct').click(function () {
 		/* Заносим выпадающий список в переменную */
 		var dropBlock = $(this).parent().find('.drop');
 		//  закрываем все открытые
@@ -119,18 +119,18 @@ $(document).ready(function() {
 
 
 			/* Работаем с событием клика по элементам выпадающего списка */
-			$('.drop').find('li').off("click").click(function() {
+			$('.drop').find('li').off("click").click(function () {
 
 				/* Заносим в переменную HTML код элемента
-				списка по которому кликнули */
+				 списка по которому кликнули */
 				var selectResult = $(this).html();
 
 				/* Находим наш скрытый инпут и передаем в него
-				значение из переменной selectResult */
+				 значение из переменной selectResult */
 				$(this).parent().parent().find('input').val(selectResult);
 
 				/* Передаем значение переменной selectResult в ссылку которая
-				открывает наш выпадающий список и удаляем активность */
+				 открывает наш выпадающий список и удаляем активность */
 				$(this).parent().parent().find(".slct").removeClass('active').html(selectResult);
 				$(".slct_arrow").removeClass('active');
 
@@ -149,7 +149,7 @@ $(document).ready(function() {
 		return false;
 	});
 	// Открываем модальное окно
-	$(".modal").click(function(e) {
+	$(".modal").click(function (e) {
 		e.preventDefault();
 		var id = $(this).data('modal');
 		var txt = $(this).data('info');
@@ -159,28 +159,28 @@ $(document).ready(function() {
 		// $(".popup[data-modal="+id+"] h2").html(title); // прописать в ссылку data-title="нужный title"
 
 		if (window.matchMedia("(min-width: 992px)").matches) {
-			$("body").css({ "overflow": "hidden", "padding-right": "17px" });
+			$("body").css({"overflow": "hidden", "padding-right": "17px"});
 		}
 		if (window.matchMedia("(max-width: 992px)").matches) {
 
-			$("body").css({ "overflow": "hidden", "padding-right": "0px" });
+			$("body").css({"overflow": "hidden", "padding-right": "0px"});
 		}
 	});
 	// overlay для закрытия
-	$(".overlay").click(function() {
+	$(".overlay").click(function () {
 		$(this).parent().toggle("fade", 1000);
-		$("body").css({ "overflow": "inherit", "padding-right": "0" });
+		$("body").css({"overflow": "inherit", "padding-right": "0"});
 		$(".dm-modal .modal_form_input_wrap .modal_input_error").hide();
 	});
 	// закрываем модальное окно на крестик
-	$(".popup .close").click(function(e) {
+	$(".popup .close").click(function (e) {
 		e.preventDefault();
 		$(this).parents(".popup").hide("fade", 1000);
-		$("body").css({ "overflow": "inherit", "padding-right": "0" });
+		$("body").css({"overflow": "inherit", "padding-right": "0"});
 		$(".dm-modal .modal_form_input_wrap .modal_input_error").hide();
 	});
 	//обработчик кнопки на нажатие btn_mnu
-	$("#nav-button-label").click(function(e) {
+	$("#nav-button-label").click(function (e) {
 		e.preventDefault();
 		$(this).toggleClass('nav-on'); // добавляет класс для анимации самой кнопки
 		$(this).next().slideToggle(); // открывает меню main_nav_block, которое было скрыто
@@ -188,7 +188,7 @@ $(document).ready(function() {
 		$(".mnu_dropdown").toggleClass("active");
 	});
 	// Скрыть элемент при клике за его пределами бутерброд и его выпадающее меню
-	$(document).click(function(event) {
+	$(document).click(function (event) {
 		if ($(event.target).closest("#nav-button-label").length)
 			return;
 		if ($(event.target).closest("[off-canvas]").length)
@@ -200,136 +200,75 @@ $(document).ready(function() {
 
 	});
 	//  Отправка форм
-	$("form:not('#form-file')").submit(function(e) { // перехватываем все при событии отправки
-		e.preventDefault();
 
-		var form = $(this); // запишем форму, чтобы потом не было проблем с this
-		var error = [];
-		form.find('.modal_form_input').each(function() { // пробежим по каждому полю в форме
-
-			if ($(this).val() == '') { // если находим пустое
-				$(this).siblings(".modal_input_error").show("fade", 500);
-				$(this).siblings("i").hide("fade", 500);
-				error.push(true); // ошибка
-				// анимация ошибок в формах
-				$(".modal_form_input").animated("swing");
-				setTimeout(function() {
-					$('.modal_form_input').removeClass('swing');
-					$('.modal_form_input').removeClass('animated');
-				}, 500);
-			} else if ($(this).val() !== '') { // если находим не пустое
-				$(this).siblings(".modal_input_error").hide("fade", 500);
-				$(this).siblings("i").show("fade", 500);
-				error.push(false); // нет ошибки
-			}
-			$(this).focus(function() {
-				$(this).siblings('.modal_input_error').hide("fade", 500)
-			});
-
-		});
-		form.find('.modal_form_phone').each(function() { // пробежим по каждому полю в форме
-			var pattern = /^(\+|d+)*\d[\d\(\)\-]{4,14}\d$/;
-			if ($(this).val() == '') { // если пустое
-				$(this).siblings(".modal_input_error").show("fade", 500);
-				$(this).siblings("i").hide("fade", 500);
-				error.push(true); // ошибка
-				// анимация ошибок в формах
-				$(".modal_form_phone").animated("swing");
-				setTimeout(function() {
-					$('.modal_form_phone').removeClass('swing');
-					$('.modal_form_phone').removeClass('animated');
-				}, 500);
-				if ($(this).siblings().hasClass('input_error_phone')) {
-					$(this).siblings(".modal_input_error").removeClass('input_error_phone').text("").prepend("Заполните поле<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
-				}
-			} else if ($(this).val() !== '') {
-				if ($(this).val().match(pattern)) {
-					$(this).siblings(".modal_input_error").hide("fade", 500);
-					$(this).siblings("i").show("fade", 500);
-					error.push(false); // нет ошибок
-				} else {
-					$(this).siblings(".modal_input_error").show("fade", 500).addClass('input_error_phone').text("").prepend("Введите правильный телефон<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
-					error.push(true); // ошибка
-					// анимация ошибок в формах
-					$(".modal_form_phone").animated("swing");
-					setTimeout(function() {
-						$('.modal_form_phone').removeClass('swing');
-						$('.modal_form_phone').removeClass('animated');
-					}, 500);
-				}
-			}
-			$(this).focus(function() {
-				$(this).siblings('.modal_input_error').hide("fade", 500);
-			});
-
-		});
-		form.find('.modal_form_email').each(function() { // пробежим по каждому полю в форме
-			var pattern = /^(([a-zA-Z0-9]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+\.)*([a-zA-Z0-9\-]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+@([a-zA-Z0-9-]+\.)+[a-zA-Z0-9-]+$/;
-			if ($(this).val() == '') { // если пустое
-				$(this).siblings(".modal_input_error").show("fade", 500);
-				$(this).siblings("i").hide("fade", 500);
-				error.push(true); // ошибка
-				// анимация ошибок в формах
-				$(".modal_form_email").animated("swing");
-				setTimeout(function() {
-					$('.modal_form_email').removeClass('swing');
-					$('.modal_form_email').removeClass('animated');
-				}, 500);
-				if ($(this).siblings().hasClass('input_error_email')) {
-					$(this).siblings(".modal_input_error").removeClass('input_error_email').text("").prepend("Заполните поле<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
-				}
-
-			} else if ($(this).val() !== '') {
-				if ($(this).val().match(pattern)) {
-					$(this).siblings(".modal_input_error").hide("fade", 500).removeClass('input_error_email');
-					$(this).siblings("i").show("fade", 500);
-					error.push(false); // нет ошибок
-				} else {
-					$(this).siblings(".modal_input_error").show("fade", 500).addClass('input_error_email').text("").prepend("Введите правильный Email<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
-					error.push(true); // ошибка
-					// анимация ошибок в формах
-					$(".modal_form_email").animated("swing");
-					setTimeout(function() {
-						$('.modal_form_email').removeClass('swing');
-						$('.modal_form_email').removeClass('animated');
-					}, 500);
-				}
-			}
-			$(this).focus(function() {
-				$(this).siblings('.modal_input_error').hide("fade", 500);
-			});
-
-		});
-		var erorr_finish = 0;
-		for (var i = 0; i < error.length; i++) {
-			if (error[i] == false) {
-				erorr_finish = erorr_finish + 1;
-			};
-			// console.log(error[i]);
+	// initialize tooltipster on text input elements
+	$('input:not("[type=submit], [type=hidden]")').tooltipster({
+		position: 'bottom',
+		theme: 'tooltipster-shadow',
+		functionPosition: function (instance, helper, position) {
+			position.coord.top -= 10;
+			return position;
 		}
-		//console.log(erorr_finish);
-		var size = error.length - 1;
-		if (erorr_finish > size) { // в зависимости от полей которые проверяются (в нашем случае 3 поля)
-			var data = form.serialize(); // подготавливаем данные
-			$.ajax({ // инициализируем ajax запрос
-				type: 'POST', // отправляем в POST формате, можно GET
-				url: 'mail.php', // путь до обработчика, у нас он лежит в той же папке
-				dataType: 'json', // ответ ждем в json формате
-				data: data, // данные для отправки
-				beforeSend: function(data) { // событие до отправки
-					form.find('input[type="submit"]').attr('disabled', 'disabled'); // например, отключим кнопку, чтобы не жали по 100 раз
-				},
-				success: function(data) { // событие после удачного обращения к серверу и получения ответа
-					if (data['error']) { // если обработчик вернул ошибку
-						alert(data['error']); // покажем её текст
-					} else { // если все прошло ок
+	});
 
+	$.validator.addMethod('customphone', function (value, element) {
+		return this.optional(element) || /^(\+|d+)*\d[\d\(\)\-]{4,14}\d$/.test(value);
+	}, "Введите телефон в правильном формате");
+
+	$.validator.addMethod('customemail', function (value, element) {
+		return this.optional(element) || /^(([a-zA-Z0-9]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+\.)*([a-zA-Z0-9\-]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+@([a-zA-Z0-9-]+\.)+[a-zA-Z0-9-]+$/.test(value);
+	}, "Введите правильный Email");
+	$("form:not('#form-file')").submit(function (e) {
+		e.preventDefault();
+		let form = $(this);
+		form.validate({
+			errorPlacement: function (error, element) {
+				$(element).tooltipster('content', $(error).text());
+				$(element).tooltipster('show');
+			},
+			success: function (label, element) {
+				$(element).tooltipster('hide');
+			},
+			rules: {
+				name: {
+					required: true,
+				},
+				email: {
+					required: true,
+					customemail: "customemail"
+				},
+				phone: {
+					required: true,
+					customphone: "customphone"
+				}
+			},
+
+			messages: {
+				name: {
+					required: "Заполните поле",
+					name: "Тип"
+				},
+				email: {
+					required: "Введите свой email"
+				},
+				phone: {
+					required: "Введите свой телефон"
+				}
+			},
+			submitHandler() {
+				let data = form.serialize();
+				$.ajax({
+					type: "POST",
+					url: "./mail.php",
+					data: data,
+					dataType: "json",
+					success: function () {
 						if (data['form_type'] == 'modal') {
 							$('.dm-modal form').hide();
 							$('.dm-modal .close').hide();
 							form.trigger('reset');
 							$('.dm-modal .success_mail').addClass('active'); //пишем что всё ок
-							setTimeout(function() {
+							setTimeout(function () {
 								form.parents('.popup').hide("fade", 500);
 								$('.dm-modal .success_mail').removeClass('active');
 								$('.dm-modal .modal_form_input_wrap i').hide();
@@ -342,7 +281,7 @@ $(document).ready(function() {
 							$('.dm-modal .success_mail').addClass('active');
 							$('.popup[data-modal=modal-res]').toggle("fade", 500);
 							//$("body").css({ "overflow": "hidden", "padding-right": "17px" });
-							setTimeout(function() {
+							setTimeout(function () {
 								$('.popup[data-modal=modal-res]').hide("fade", 500);
 								$('.dm-modal .success_mail').removeClass('active', 500);
 								$('.dm-modal .modal_form_input_wrap i').hide();
@@ -350,29 +289,185 @@ $(document).ready(function() {
 							}, 3000);
 						}
 					}
-				},
-				error: function(xhr, ajaxOptions, thrownError) { // в случае неудачного завершения запроса к серверу
-					alert(xhr.status); // покажем ответ сервера
-					alert(thrownError); // и текст ошибки
-				},
-				complete: function(data) { // событие после любого исхода
-					form.find('input[type="submit"]').prop('disabled', false); // в любом случае включим кнопку обратно
-				}
+				});
 
-			});
-		}
-		return false; // вырубаем стандартную отправку формы
+			}
+		});
 	});
+	// $("form:not('#form-file')").submit(function(e) { // перехватываем все при событии отправки
+	// 	e.preventDefault();
+	//
+	// 	var form = $(this); // запишем форму, чтобы потом не было проблем с this
+	// 	var error = [];
+	// 	form.find('.modal_form_input').each(function() { // пробежим по каждому полю в форме
+	//
+	// 		if ($(this).val() == '') { // если находим пустое
+	// 			$(this).siblings(".modal_input_error").show("fade", 500);
+	// 			$(this).siblings("i").hide("fade", 500);
+	// 			error.push(true); // ошибка
+	// 			// анимация ошибок в формах
+	// 			$(".modal_form_input").animated("swing");
+	// 			setTimeout(function() {
+	// 				$('.modal_form_input').removeClass('swing');
+	// 				$('.modal_form_input').removeClass('animated');
+	// 			}, 500);
+	// 		} else if ($(this).val() !== '') { // если находим не пустое
+	// 			$(this).siblings(".modal_input_error").hide("fade", 500);
+	// 			$(this).siblings("i").show("fade", 500);
+	// 			error.push(false); // нет ошибки
+	// 		}
+	// 		$(this).focus(function() {
+	// 			$(this).siblings('.modal_input_error').hide("fade", 500)
+	// 		});
+	//
+	// 	});
+	// 	form.find('.modal_form_phone').each(function() { // пробежим по каждому полю в форме
+	// 		var pattern = /^(\+|d+)*\d[\d\(\)\-]{4,14}\d$/;
+	// 		if ($(this).val() == '') { // если пустое
+	// 			$(this).siblings(".modal_input_error").show("fade", 500);
+	// 			$(this).siblings("i").hide("fade", 500);
+	// 			error.push(true); // ошибка
+	// 			// анимация ошибок в формах
+	// 			$(".modal_form_phone").animated("swing");
+	// 			setTimeout(function() {
+	// 				$('.modal_form_phone').removeClass('swing');
+	// 				$('.modal_form_phone').removeClass('animated');
+	// 			}, 500);
+	// 			if ($(this).siblings().hasClass('input_error_phone')) {
+	// 				$(this).siblings(".modal_input_error").removeClass('input_error_phone').text("").prepend("Заполните поле<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
+	// 			}
+	// 		} else if ($(this).val() !== '') {
+	// 			if ($(this).val().match(pattern)) {
+	// 				$(this).siblings(".modal_input_error").hide("fade", 500);
+	// 				$(this).siblings("i").show("fade", 500);
+	// 				error.push(false); // нет ошибок
+	// 			} else {
+	// 				$(this).siblings(".modal_input_error").show("fade", 500).addClass('input_error_phone').text("").prepend("Введите правильный телефон<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
+	// 				error.push(true); // ошибка
+	// 				// анимация ошибок в формах
+	// 				$(".modal_form_phone").animated("swing");
+	// 				setTimeout(function() {
+	// 					$('.modal_form_phone').removeClass('swing');
+	// 					$('.modal_form_phone').removeClass('animated');
+	// 				}, 500);
+	// 			}
+	// 		}
+	// 		$(this).focus(function() {
+	// 			$(this).siblings('.modal_input_error').hide("fade", 500);
+	// 		});
+	//
+	// 	});
+	// 	form.find('.modal_form_email').each(function() { // пробежим по каждому полю в форме
+	// 		var pattern = /^(([a-zA-Z0-9]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+\.)*([a-zA-Z0-9\-]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+@([a-zA-Z0-9-]+\.)+[a-zA-Z0-9-]+$/;
+	// 		if ($(this).val() == '') { // если пустое
+	// 			$(this).siblings(".modal_input_error").show("fade", 500);
+	// 			$(this).siblings("i").hide("fade", 500);
+	// 			error.push(true); // ошибка
+	// 			// анимация ошибок в формах
+	// 			$(".modal_form_email").animated("swing");
+	// 			setTimeout(function() {
+	// 				$('.modal_form_email').removeClass('swing');
+	// 				$('.modal_form_email').removeClass('animated');
+	// 			}, 500);
+	// 			if ($(this).siblings().hasClass('input_error_email')) {
+	// 				$(this).siblings(".modal_input_error").removeClass('input_error_email').text("").prepend("Заполните поле<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
+	// 			}
+	//
+	// 		} else if ($(this).val() !== '') {
+	// 			if ($(this).val().match(pattern)) {
+	// 				$(this).siblings(".modal_input_error").hide("fade", 500).removeClass('input_error_email');
+	// 				$(this).siblings("i").show("fade", 500);
+	// 				error.push(false); // нет ошибок
+	// 			} else {
+	// 				$(this).siblings(".modal_input_error").show("fade", 500).addClass('input_error_email').text("").prepend("Введите правильный Email<div class='modal_error_triangle'></div><div class='modal_error_chest_img'></div>");
+	// 				$(this).siblings("i").hide("fade", 500);
+	// 				error.push(true); // ошибка
+	// 				// анимация ошибок в формах
+	// 				$(".modal_form_email").animated("swing");
+	// 				setTimeout(function() {
+	// 					$('.modal_form_email').removeClass('swing');
+	// 					$('.modal_form_email').removeClass('animated');
+	// 				}, 500);
+	// 			}
+	// 		}
+	// 		$(this).focus(function() {
+	// 			$(this).siblings('.modal_input_error').hide("fade", 500);
+	// 		});
+	//
+	// 	});
+	// 	var erorr_finish = 0;
+	// 	for (var i = 0; i < error.length; i++) {
+	// 		if (error[i] == false) {
+	// 			erorr_finish = erorr_finish + 1;
+	// 		};
+	// 		// console.log(error[i]);
+	// 	}
+	// 	//console.log(erorr_finish);
+	// 	var size = error.length - 1;
+	// 	if (erorr_finish > size) { // в зависимости от полей которые проверяются (в нашем случае 3 поля)
+	// 		var data = form.serialize(); // подготавливаем данные
+	// 		$.ajax({ // инициализируем ajax запрос
+	// 			type: 'POST', // отправляем в POST формате, можно GET
+	// 			url: 'mail.php', // путь до обработчика, у нас он лежит в той же папке
+	// 			dataType: 'json', // ответ ждем в json формате
+	// 			data: data, // данные для отправки
+	// 			beforeSend: function(data) { // событие до отправки
+	// 				form.find('input[type="submit"]').attr('disabled', 'disabled'); // например, отключим кнопку, чтобы не жали по 100 раз
+	// 			},
+	// 			success: function(data) { // событие после удачного обращения к серверу и получения ответа
+	// 				if (data['error']) { // если обработчик вернул ошибку
+	// 					alert(data['error']); // покажем её текст
+	// 				} else { // если все прошло ок
+	//
+	// 					if (data['form_type'] == 'modal') {
+	// 						$('.dm-modal form').hide();
+	// 						$('.dm-modal .close').hide();
+	// 						form.trigger('reset');
+	// 						$('.dm-modal .success_mail').addClass('active'); //пишем что всё ок
+	// 						setTimeout(function() {
+	// 							form.parents('.popup').hide("fade", 500);
+	// 							$('.dm-modal .success_mail').removeClass('active');
+	// 							$('.dm-modal .modal_form_input_wrap i').hide();
+	// 							$('.dm-modal .close').show("fade", 2000);
+	// 							//$("body").css({ "overflow": "inherit", "padding-right": "0" });
+	// 						}, 3000);
+	// 					}
+	// 					if (data['form_type'] == 'normal') { //надо писать в обычных формах <input type="hidden" name="form_type" value="normal">
+	// 						form.trigger('reset');
+	// 						$('.dm-modal .success_mail').addClass('active');
+	// 						$('.popup[data-modal=modal-res]').toggle("fade", 500);
+	// 						//$("body").css({ "overflow": "hidden", "padding-right": "17px" });
+	// 						setTimeout(function() {
+	// 							$('.popup[data-modal=modal-res]').hide("fade", 500);
+	// 							$('.dm-modal .success_mail').removeClass('active', 500);
+	// 							$('.dm-modal .modal_form_input_wrap i').hide();
+	// 							//$("body").css({ "overflow": "inherit", "padding-right": "0" });
+	// 						}, 3000);
+	// 					}
+	// 				}
+	// 			},
+	// 			error: function(xhr, ajaxOptions, thrownError) { // в случае неудачного завершения запроса к серверу
+	// 				alert(xhr.status); // покажем ответ сервера
+	// 				alert(thrownError); // и текст ошибки
+	// 			},
+	// 			complete: function(data) { // событие после любого исхода
+	// 				form.find('input[type="submit"]').prop('disabled', false); // в любом случае включим кнопку обратно
+	// 			}
+	//
+	// 		});
+	// 	}
+	// 	return false; // вырубаем стандартную отправку формы
+	// });
 
 	//  Отправка форм с файлом вносим input[type=file]
 	var files;
-	$('input[type=file]').change(function() {
+	$('input[type=file]').change(function () {
 		files = this.files;
 		//alert(files);
 	});
 
 	//  Отправка форм с файлом submit
-	$("#form-file").on('submit', function(e) { // перехватываем все при событии отправки
+	$("#form-file").on('submit', function (e) { // перехватываем все при событии отправки
 		e.preventDefault();
 		var $data = new FormData(),
 			form = $(this),
@@ -383,7 +478,7 @@ $(document).ready(function() {
 			$name = $("#form-file").find('input[name=name]'),
 			$textarea = $("#form-file").find('textarea');
 
-		$.each(files, function(key, value) {
+		$.each(files, function (key, value) {
 			if (!this.name.match(/(.txt)|(.pdf)|(.docx)|(.doc)|(.xlsx)$/i)) {
 				alert("Неправильный формат тектового файла.");
 				return false;
@@ -396,7 +491,7 @@ $(document).ready(function() {
 			$data.append(key, value);
 		});
 
-		$.each($inputs, function(key, value) {
+		$.each($inputs, function (key, value) {
 			$data.append($(this).attr('name'), $(this).val());
 		});
 
@@ -406,7 +501,7 @@ $(document).ready(function() {
 		$data.append($email.attr('name'), $email.val());
 		$data.append($name.attr('name'), $name.val());
 
-		form.find('.modal_form_input').each(function() { // пробежим по каждому полю в форме
+		form.find('.modal_form_input').each(function () { // пробежим по каждому полю в форме
 
 			if ($(this).val() == '') { // если находим пустое
 				$(this).siblings(".modal_input_error").show("fade", 500);
@@ -417,12 +512,12 @@ $(document).ready(function() {
 				$(this).siblings("i").show("fade", 500);
 				error.push(false); // нет ошибки
 			}
-			$(this).focus(function() {
+			$(this).focus(function () {
 				$(this).siblings(".modal_input_error").hide("fade", 500)
 			});
 
 		});
-		form.find('.modal_form_phone').each(function() { // пробежим по каждому полю в форме
+		form.find('.modal_form_phone').each(function () { // пробежим по каждому полю в форме
 			var pattern = /^(\+|d+)*\d[\d\(\)\-]{4,14}\d$/;
 			if ($(this).val() == '') { // если пустое
 				$(this).siblings(".modal_input_error").show("fade", 500);
@@ -442,12 +537,12 @@ $(document).ready(function() {
 					error.push(true); // ошибка
 				}
 			}
-			$(this).focus(function() {
+			$(this).focus(function () {
 				$(this).siblings(".modal_input_error").hide("fade", 500);
 			});
 
 		});
-		form.find('.modal_form_email').each(function() { // пробежим по каждому полю в форме
+		form.find('.modal_form_email').each(function () { // пробежим по каждому полю в форме
 			var pattern = /^(([a-zA-Z0-9]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+\.)*([a-zA-Z0-9]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+@([a-zA-Z0-9-]+\.)+[a-zA-Z0-9-]+$/;
 			if ($(this).val() == '') { // если пустое
 				$(this).siblings(".modal_input_error").show("fade", 500);
@@ -468,7 +563,7 @@ $(document).ready(function() {
 					error.push(true); // ошибка
 				}
 			}
-			$(this).focus(function() {
+			$(this).focus(function () {
 				$(this).siblings(".modal_input_error").hide("fade", 500);
 			});
 
@@ -500,16 +595,16 @@ $(document).ready(function() {
 				processData: false,
 				dataType: 'json',
 				data: $data,
-				beforeSend: function(loading) {
+				beforeSend: function (loading) {
 					$('.fileLoad input').val('Файл загружается');
 				},
-				success: function(data) {
+				success: function (data) {
 					$('.dm-modal .success_mail').addClass('active');
 					$('.popup2 .close').hide();
 					$('.fileLoad input').val('Файл загружен!');
 					$('.file-load-block input[type=text]').css('color', '#b2d04e');
 					$('.popup[data-modal=modal-res]').show().delay(2000).fadeOut(
-						function() {
+						function () {
 							$('.popup[data-modal=modal-res]').hide("fade", 500);
 							form.trigger('reset');
 							$('.dm-modal .sucess_mail').addClass('active');
