@@ -121,31 +121,22 @@ block main
 					.intermediate_title
 						h3 Заполните форму и мы бесплатно перезвоним и ответим на ваши вопросы
 					.intermediate_wrap
-						form
+						form#form-file
+							.file_wrap
+								.fileLoad
+								input(type='file' name='field')
 							.intermediate_item.col-lg-3.col-md-4.col-sm-4
-								.modal_form_input_wrap
-									.modal_input_error
-										| Заполните поле
-										.modal_error_triangle
-										.modal_error_chest_img
+								.input_wrap
 									i.fa.fa-check
-									input.modal_form_input(name='name', type='text', placeholder='Имя')
+									input(name='name', type='text', placeholder='Имя')
 							.intermediate_item.col-lg-3.col-md-4.col-sm-4
-								.modal_form_input_wrap
-									.modal_input_error
-										| Заполните поле
-										.modal_error_triangle
-										.modal_error_chest_img
+								.input_wrap
 									i.fa.fa-check
-									input.modal_form_email(name='email', type='text', placeholder='Почта')
+									input(name='email', type='text', placeholder='Почта')
 							.intermediate_item.col-lg-3.col-md-4.col-sm-4
-								.modal_form_input_wrap
-									.modal_input_error
-										| Заполните поле
-										.modal_error_triangle
-										.modal_error_chest_img
+								.input_wrap
 									i.fa.fa-check
-									input.modal_form_phone(name='phone', type='text', placeholder='Телефон')
+									input(name='phone', type='text', placeholder='Телефон')
 							input(type='hidden', name='form_name', value='')
 							input(type='hidden', name='form_type', value='normal')
 							input.col-lg-3(type='submit', value='Записаться')
