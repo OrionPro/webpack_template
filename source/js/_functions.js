@@ -232,10 +232,14 @@ $(document).ready(function () {
 		}
 	});
 	// Добавляем методы для validator
-	$.validator.addMethod( "extension", function( value, element, param ) {
+	$.validator.addMethod( "extension", function( value, element, param, size ) {
 		param = typeof param === "string" ? param.replace( /,/g, "|" ) : "png|jpe?g|gif|txt|pdf|docx|doc|xlsx";
 		return this.optional( element ) || value.match( new RegExp( "\\.(" + param + ")$", "i" ) );
 	}, $.validator.format( "Выберите файл с правильным расширением." ) );
+
+	$.validator.addMethod('filesize', function (value, element, param) {
+		return this.optional(element) || ((element.files[0].size / 1024).toFixed(0)  <= param)
+	}, 'Размер файла не должен превышать 10 мегабайт');
 
 	$.validator.addMethod('customphone', function (value, element) {
 		return this.optional(element) || /^(\+|d+)*\d[\d\(\)\-]{4,14}\d$/.test(value);
@@ -282,7 +286,8 @@ $(document).ready(function () {
 				},
 				field: {
 					required: true,
-					extension: "txt|pdf|docx|doc|xlsx|gif|png|jpeg|jpe|jpg"
+					extension: "txt|pdf|docx|doc|xlsx|gif|png|jpeg|jpe|jpg",
+					filesize: 10000
 				}
 			},
 			messages: {
@@ -303,7 +308,6 @@ $(document).ready(function () {
 				}
 			},
 			submitHandler: function (form) {
-
 			}
 		});
 	});
