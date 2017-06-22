@@ -219,6 +219,8 @@ $(document).ready(function () {
 		return this.optional(element) || /^(([a-zA-Z0-9]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+\.)*([a-zA-Z0-9\-]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+@([a-zA-Z0-9-]+\.)+[a-zA-Z0-9-]+$/.test(value);
 	}, "Введите правильный Email");
 	$("form:not('#form-file')").submit(function (e) {
+		console.log("submit");
+
 		e.preventDefault();
 		let form = $(this);
 		form.validate({
