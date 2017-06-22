@@ -168,7 +168,7 @@ $(document).ready(function () {
 	});
 	// overlay для закрытия
 	$(".overlay").click(function () {
-		$(this).parent().toggle("fade", 1000);
+		$(this).parent().hide("fade", 1000);
 		$("body").css({"overflow": "inherit", "padding-right": "0"});
 		$(".dm-modal .modal_form_input_wrap .modal_input_error").hide();
 		$('input:not("[type=submit], [type=hidden]")').removeClass('tooltipster-show').tooltipster('close');
