@@ -25,8 +25,8 @@ block main
 				.container
 					.row
 						.header_logo
-							a(href="/" class="logo").
-								Ваше Логотип
+							a(href="/" class="logo" title="Логотип").
+								Ваш Логотип
 						nav.header_nav
 							ul
 								-var links = [{title:'Примеры Кухонь', href:'#'},{title:'Преимущества', href:'#'},{title:'Отзывы', href:'#'},{title:'7 3842 59 61 68', href:'tel:73842596168'}];
@@ -34,9 +34,9 @@ block main
 									li
 										a(href=i.href)= i.title
 						.header_modal
-							a(data-modal="modal-1" data-info="Обратный звонок" href="#" class="modal active") Обратный звонок
+							a(data-modal="modal-1" data-info="Обратный звонок" href="#" class="modal active" title='Вызов стандартного модального окна') Обратный звонок
 						.header_modal
-							a(data-modal="modal-3" data-info="Обратный звонок" href="#" class="modal active") Мобильное меню
+							a(data-modal="modal-3" data-info="Обратный звонок" href="#" class="modal active" title='Вызов примера модального окна, в виде навигации.') Мобильное меню
 						.header_title
 							h1
 								span ФУНКЦИОНАЛЬНЫЕ
@@ -121,9 +121,8 @@ block main
 					.intermediate_title
 						h3 Заполните форму и мы бесплатно перезвоним и ответим на ваши вопросы
 					.intermediate_wrap
-						form#form-file
+						form#form-file.clearfix
 							.file_wrap
-								.fileLoad
 								input(type='file' name='field')
 							.intermediate_item.col-lg-3.col-md-4.col-sm-4
 								.input_wrap

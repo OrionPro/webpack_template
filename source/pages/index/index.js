@@ -9,6 +9,8 @@ require("../../libs/libs").waypoint();
 require("../../libs/libs").Animate_css();
 require("../../libs/libs").animate_modal();
 require("../../libs/libs").animate_modal_js();
+require("../../libs/libs").tooltipster_follower();
+require("../../libs/libs").tooltipster_follower_css();
 require("../../libs/libs").tooltipster();
 require("../../libs/libs").jqueryValidation();
 require("../../libs/libs").tooltipster_main_css();
@@ -19,8 +21,13 @@ import common from '../../js/common';
 import App from '../../js/react';
 
 $(document).ready( function() {
-
-
+	$(".header_modal a").tooltipster({
+		plugins: ['follower'],
+		theme:  'tooltipster-shadow'
+	});
+	$(".header_logo a").tooltipster({
+		theme:  'tooltipster-light'
+	});
 });
 
 $(window).resize(function() {

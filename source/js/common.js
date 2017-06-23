@@ -6,6 +6,8 @@ require("../libs/libs").Animate_css();
 
 
 import functions from '../js/_functions.js';
+import modal from '../js/modal';
+import validation from '../js/validation';
 
 $(document).ready( function() {
 
