@@ -10,7 +10,7 @@ $(function () {
 });
 //изменяется - для плавной обратной анимации animate.css*/
 $(window).scroll(function () {
-	// для правильной рабоы надо прописать в блок которому присваивается анимация атрибут data-anim="fadeInLeft" с названием анимации
+	// для правильной работы надо прописать в блок которому присваивается анимация атрибут data-anim="fadeInLeft" с названием анимации
 	$('.animated').each(function () {
 		var imagePos = $(this).offset().top;
 		var imageHght = $(this).outerHeight();
@@ -168,6 +168,3 @@ $(document).ready(function () {
 
 	});
 });
-
-$(".loader_inner").fadeOut();
-$(".loader").fadeOut("fast");
