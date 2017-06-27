@@ -1,8 +1,13 @@
 @import "vars"
 // loads Libs SASS
 @import "animate"
-@import "../libs/slidebars.min.css"
+@import "../libs/magnific-popup.css"
+@import "../libs/tooltipster-follower.min.css"
+@import "../libs/tooltipster.bundle.min.css"
+@import "../libs/tooltipster.main.min.css"
 @import "../libs/font-awesome.min.css"
+@import "../libs/anim-modal.css"
+@import "../libs/slidebars.min.css"
 
 html, body
 	font-size: 16px
@@ -81,60 +86,11 @@ li
 	display: none
 // Модальное окно
 
-.popup2
-	width: 100%
-	height: 100%
-	background: rgba(0, 0, 0, 0.65)
-	position: fixed
-	top: 0
-	left: 0
-	display: none
-	overflow: auto
-	z-index: 1000
-.popup
-	width: 100%
-	height: 100%
-	background: rgba(0, 0, 0, 0.65)
-	position: fixed
-	top: 0
-	left: 0
-	display: none
-	overflow: auto
-	z-index: 1000
-	&.pop3
-		.dm-modal
-			width: inherit
-			padding: 0
-			border: none
-			background-color: transparent
-			ul
-				padding: 0
-			li
-				list-style: none
-				a
-					font-size: 30px
-					color: #fff
-.dm-table
-	display: table
-	width: 100%
-	height: 100%
-.overlay
-	width: 100%
-	height: 100%
-	position: fixed
-	top: 0
-	left: 0
-	z-index: 1001
-.dm-cell
-	display: table-cell
-	padding: 0 1em
-	vertical-align: middle
-	text-align: center
 
-.dm-modal
+.white-popup
 	width: 470px
+	margin: auto
 	max-width: 50em
-	display: inline-block
 	padding: 50px 46px 50px 46px
 	border: 3px solid $main_color
 	text-align: center
@@ -142,8 +98,26 @@ li
 	animation: fade .8s
 	background-color: #fff
 	border-radius: 20px
-	z-index: 1002
 	transition: 0.5s
+	&#popup-success
+		.success_mail
+			display: block
+		.mfp-close
+			display: none
+	&#popup3
+		width: inherit
+		padding: 0
+		border: none
+		background-color: transparent
+		ul
+			padding: 0
+		li
+			list-style: none
+			a
+				font-size: 30px
+				color: #fff
+		.mfp-close
+			display: none
 	.input_wrap
 		position: relative
 		display: block
@@ -193,10 +167,10 @@ li
 			outline: 0
 			box-shadow: 0 1px 0 rgba(255,81,46,.88)
 	.success_mail
-		display: none
 		color: $main_color
 		@include fz(24)
 		font-family: $font_RobotoRegular
+		display: none
 		&.active
 			display: block
 	input[type=submit]
@@ -271,7 +245,7 @@ li
 				transition: 0.3s
 			&.active .fa
 				transform: rotate(180deg)
-.close
+.mfp-close-btn-in .mfp-close
 	position: absolute
 	right: 25px
 	top: 25px
@@ -279,6 +253,14 @@ li
 	height: 36px
 	display: block
 	background: url('../img/modal_close.png') 0 0 no-repeat
+	color: transparent
+	&:hover
+		outline: 0
+	&:active
+		outline: 0
+	&:focus
+		outline: 0
+
 // конец модального
 
 // для формы normal обёртка и иконка success
@@ -347,7 +329,7 @@ li
 		&:hover
 			border: 2px solid transparent
 			background-color: #ff9600
-			color:#fff
+			color: #fff
 .header_title
 	margin: auto
 	position: absolute
@@ -368,7 +350,6 @@ li
 	p
 		@include fz(25)
 		color: #fff
-
 // Бутерброд
 .no-touch #nav-button-label
 	&:hover .nav-line
@@ -479,7 +460,7 @@ body textarea:required:valid
 	overflow: auto
 	-webkit-overflow-scrolling: touch
 [off-canvas*=left]
-	width: 250px
+	width: 255px
 [canvas=container]
 	background-color: transparent
 	-webkit-tap-highlight-color: transparent

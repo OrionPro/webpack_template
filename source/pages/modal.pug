@@ -1,72 +1,61 @@
 //Модальное окно
-.popup(data-modal="modal-1")
-	.dm-table
-		.dm-cell
-			.dm-modal
-				a(href="#" class="close")
-				p.success_mail Спасибо! Ваша заявка уже обрабатывается менеджером и в ближайшее время он с вами свяжется.
-				form
-					div
-						label Введите своё имя
-						.input_wrap
-							i.fa.fa-check
-							input(name="name" type="text")
-						label Введите свой телефон
-						.input_wrap
-							i.fa.fa-check
-							input(name="phone" type="text")
-						label Введите свой e-mail
-						.input_wrap
-							i.fa.fa-check
-							input(name="email" type="text")
-						label Описание заяки
-						.input_wrap
-							i.fa.fa-check
-							textarea(name="textarea" type="text")
-						.select
-							.slct_arrow
-								i.fa.fa-angle-down
-							a(href="#" class="slct") Выбор заголовков:
-							ul.drop
-								li Вы крутые
-								li Я в Вас влюбился
-								li Быстрей Вас только Флеш
-							input(type="hidden" name="services")
-					input(type="hidden" name="form_name" value="")
-					input(type="hidden" name="form_type" value="modal")
-					input(type="submit" value="Отправить")
-	.overlay
+#popup.mfp-hide.white-popup.mfp-with-anim.popup
+	p.success_mail Спасибо! Ваша заявка уже обрабатывается менеджером и в ближайшее время он с вами свяжется.
+	form
+		div
+			label Введите своё имя
+			.input_wrap
+				i.fa.fa-check
+				input(name="name" type="text")
+			label Введите свой телефон
+			.input_wrap
+				i.fa.fa-check
+				input(name="phone" type="text")
+			label Введите свой e-mail
+			.input_wrap
+				i.fa.fa-check
+				input(name="email" type="text")
+			label Описание заяки
+			.input_wrap
+				i.fa.fa-check
+				textarea(name="textarea" type="text")
+			.select
+				.slct_arrow
+					i.fa.fa-angle-down
+				a(href="#" class="slct") Выбор заголовков:
+				ul.drop
+					li Вы крутые
+					li Я в Вас влюбился
+					li Быстрей Вас только Флеш
+				input(type="hidden" name="services")
+		input(type="hidden" name="form_name" value="")
+		input(type="hidden" name="form_type" value="modal")
+		input(type="submit" value="Отправить")
+.overlay
 // Модальное окно success
-.popup(data-modal='modal-res')
-	.dm-table
-		.dm-cell
-			.dm-modal
-				p.success_mail Заявка отправлена
+#popup-success.mfp-hide.white-popup.mfp-with-anim.popup
+	p.success_mail Заявка отправлена
 // вариант меню на мобильном
-.popup.pop3(data-modal='modal-3')
-	.dm-table
-		.dm-cell
-			.dm-modal
-				nav.header_nav_mobile
-					ul
-						li
-							a(href='#') Примеры кухонь
-						li
-							a(href='#') Преимущества
-						li
-							a(href='#') Отзывы
-						li
-							a(href='tel:73842596168') +7 3842 59 61 68
-						li
-							a(href='#') Примеры кухонь
-						li
-							a(href='#') Преимущества
-						li
-							a(href='#') Отзывы
-						li
-							a(href='#') Примеры кухонь
-						li
-							a(href='#') Преимущества
-	.overlay
+#popup3.mfp-hide.white-popup.mfp-with-anim.popup
+	nav.header_nav_mobile
+		ul
+			li
+				a(href='#') Примеры кухонь
+			li
+				a(href='#') Преимущества
+			li
+				a(href='#') Отзывы
+			li
+				a(href='tel:73842596168') +7 3842 59 61 68
+			li
+				a(href='#') Примеры кухонь
+			li
+				a(href='#') Преимущества
+			li
+				a(href='#') Отзывы
+			li
+				a(href='#') Примеры кухонь
+			li
+				a(href='#') Преимущества
 
 

@@ -124,33 +124,37 @@ $(document).ready(function () {
 				data: data,
 				dataType: "json",
 				beforeSend: function () { // событие до отправки
-					console.log("beforeSend");
 					self.find('input[type="submit"]').attr('disabled', 'disabled'); // например, отключим кнопку, чтобы не жали по 100 раз
 				},
 				success: function (data) {
 					if (data['form_type'] == 'modal') {
-						$('.dm-modal form').hide();
-						$('.dm-modal .close').hide();
+						$('.white-popup form').hide();
+						$('.white-popup .mfp-close').hide();
 						self.trigger('reset');
-						$('.dm-modal .success_mail').addClass('active'); //пишем что всё ок
+						$('.white-popup .success_mail').addClass('active');
 						setTimeout(function () {
-							self.parents('.popup').hide("fade", 500);
-							$('.dm-modal .close').trigger("click");
-							$('.dm-modal .success_mail').removeClass('active');
-							$('.dm-modal .input_wrap i').hide();
-							$('.dm-modal .close').show("fade", 2000);
+							$.magnificPopup.close();
+						}, 2500);
+						setTimeout(function () {
+							$('.white-popup form').show();
+							$('.white-popup .mfp-close').show();
+							$('.white-popup .input_wrap i').hide();
+							$('.white-popup .success_mail').removeClass('active');
 							self.find('input[type="submit"]').attr('disabled', false);
 							//$("body").css({ "overflow": "inherit", "padding-right": "0" });
-						}, 3000);
+						}, 3500);
 					}
 					if (data['form_type'] == 'normal') { //надо писать в обычных формах <input type="hidden" name="form_type" value="normal">
 						self.trigger('reset');
-						$('.dm-modal .success_mail').addClass('active');
-						$('.popup[data-modal=modal-res]').toggle("fade", 500);
+						$.magnificPopup.open({
+							items: {
+								src: $('#popup-success')
+							},
+							type: 'inline'
+						});
 						//$("body").css({ "overflow": "hidden", "padding-right": "17px" });
 						setTimeout(function () {
-							$('.popup[data-modal=modal-res]').hide("fade", 500);
-							$('.dm-modal .success_mail').removeClass('active', 500);
+							$.magnificPopup.close();
 							$('form').find('i').hide();
 							self.find('input[type="submit"]').attr('disabled', false);
 							//$("body").css({ "overflow": "inherit", "padding-right": "0" });
