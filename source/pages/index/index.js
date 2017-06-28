@@ -6,6 +6,8 @@ import App from '../../js/react';
 
 
 $(document).ready(function () {
+	// пример анимации через библиотечку animat (но лучше анимировать через GSAP)
+	$('.our_advantages h2').animated("fadeInUp");
 	// инициализация tooltipster
 	$(".header_modal a").tooltipster({
 		plugins: ['follower'],
@@ -25,6 +27,7 @@ $(document).ready(function () {
 		placeholder: "Выберите один или несколько тегов",
 		width: null // если null то будет шириной родителя
 	});
+
 });
 
 $(window).resize(function () {
