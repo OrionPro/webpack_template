@@ -39,7 +39,7 @@ $(document).ready(function () {
 			close: function () {
 				$('.white-popup i').hide();
 				$("body").css({"overflow": "inherit", "padding-right": "0"});
-				$('input:not("[type=submit], [type=hidden]")').removeClass('tooltipster-show').tooltipster('close');
+				$('input:not("[type=submit], [type=hidden]")').removeClass('tooltipster-show');
 				// Это код закрытия эффекта красивого при открытии и закрытии модалки
 				$(".cd-transition-layer").addClass("closing"), $("#popup").removeClass("visible"), $(".cd-transition-layer").children().one("webkitAnimationEnd oanimationend msAnimationEnd animationend", function () {
 					$(".cd-transition-layer").removeClass("closing opening visible"), $(".cd-transition-layer").children().off("webkitAnimationEnd oanimationend msAnimationEnd animationend")

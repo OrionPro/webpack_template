@@ -1,5 +1,4 @@
 import common from '../../js/common';
-import '../../pages/index/index.pug'; //это для обновления страницы при hotreload - при npm build убрать
 
 import './index.sass';
 import animate from '../../js/animate';
@@ -17,10 +16,14 @@ $(document).ready(function () {
 	});
 	// инициализация select2
 	$(".select2").select2({
-		tags: false
+		//minimumResultsForSearch: -1, // выключам поле ввода поиска
+		tags: false,
+		width: null
 	});
 	$(".select2-tags").select2({
-		tags: true
+		tags: true,
+		placeholder: "Выберите один или несколько тегов",
+		width: null // если null то будет шириной родителя
 	});
 });
 

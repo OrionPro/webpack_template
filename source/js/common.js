@@ -3,13 +3,13 @@ require("../libs/libs").matchMedia();
 require("../libs/libs").waypoint();
 require("../libs/libs").Animate_css();
 require("../libs/libs").animate_modal_js();
+require("../libs/libs").magnific_popup();
 require("../libs/libs").tooltipster_follower();
 require("../libs/libs").tooltipster();
-require("../libs/libs").magnific_popup();
 require("../libs/libs").jqueryValidation();
 require("../libs/libs").select2();
-import modal from '../js/modal';
 import validation from '../js/validation';
+import modal from '../js/modal';
 
 import '../sass/main.sass';
 import functions from '../js/_functions.js';
