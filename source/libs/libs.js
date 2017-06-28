@@ -19,6 +19,11 @@ exports.tooltipster_follower = function () {
 exports.magnific_popup = function () {
 	return require("magnific-popup");
 };
+
+exports.select2 = function () {
+	return require("select2");
+};
+
 // Экспорты из папки libs
 
 exports.jqueryui = function () {

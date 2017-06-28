@@ -211,8 +211,6 @@ $(document).ready(function () {
 				},
 				success: function (data) {
 					if (data['form_type'] == 'normal') { //надо писать в обычных формах <input type="hidden" name="form_type" value="normal">
-						$('.dm-modal .success_mail').addClass('active');
-						$('.popup2 .close').hide();
 						$('input[type=file]').tooltipster('content', "Файл загружен!");
 						$('input[type=file]').tooltipster('show');
 						form.tooltipster('content', "Письмо отправлено!");
@@ -227,17 +225,23 @@ $(document).ready(function () {
 							form.tooltipster('hide');
 						}, 3500);
 						// Вариант с показом модального окна с success
-						// $('.popup[data-modal=modal-res]').show().delay(2000).fadeOut(
-						// 	function () {
-						// 		$('.popup[data-modal=modal-res]').hide("fade", 500);
-						// 		form.trigger('reset');
-						// 		form.find('i').hide();
-						// 		$('.dm-modal .success_mail').removeClass('active');
-						// 		$('.popup2 .close').show();
-						// 		$('input[type=file]').tooltipster('hide');
-						// 		files = undefined;
-						// 	}
-						// );
+						// $('input[type=file]').tooltipster('content', "Файл загружен!");
+						// $('input[type=file]').tooltipster('show');
+						// self.trigger('reset');
+						// $.magnificPopup.open({
+						// 	items: {
+						// 		src: $('#popup-success')
+						// 	},
+						// 	type: 'inline'
+						// });
+						// //$("body").css({ "overflow": "hidden", "padding-right": "17px" });
+						// setTimeout(function () {
+						// 	$.magnificPopup.close();
+						// 	$('form').find('i').hide();
+						// 	files = undefined;
+						// 	self.find('input[type="submit"]').attr('disabled', false);
+						// 	//$("body").css({ "overflow": "inherit", "padding-right": "0" });
+						// }, 3000);
 					}
 
 				}

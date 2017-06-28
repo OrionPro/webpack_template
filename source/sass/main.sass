@@ -8,6 +8,7 @@
 @import "../libs/font-awesome.min.css"
 @import "../libs/anim-modal.css"
 @import "../libs/slidebars.min.css"
+@import "../libs/select2.min.css"
 
 html, body
 	font-size: 16px
@@ -55,10 +56,6 @@ li
 	-moz-user-select: none
 	-ms-user-select: none
 	user-select: none
-
-
-
-
 // html .loader
 // 	background: none repeat scroll 0 0 #ffffff
 // 	bottom: 0
@@ -85,8 +82,6 @@ li
 .hidden
 	display: none
 // Модальное окно
-
-
 .white-popup
 	width: 470px
 	margin: auto
@@ -289,8 +284,6 @@ li
 		height: 100%
 		min-height: 100%
 		position: relative
-
-
 .header_logo
 	display: inline-block
 	margin-top: 49px
@@ -301,7 +294,6 @@ li
 		font-family: $font_ROBOTO_BLACK
 		&:hover
 			text-decoration: none
-
 .header_nav
 	display: inline-block
 	position: relative
@@ -508,7 +500,7 @@ nav[canvas]
 		margin-bottom: 55px
 		min-height: 230px
 		h3
-			font-size: 27px
+			font-size: 26px
 			text-align: center
 		p
 			margin-top: 15px
@@ -523,6 +515,8 @@ nav[canvas]
 // Секция main_content
 .main_content
 	text-align: center
+	.select2-container
+		width: 300px
 // Пример checkbox
 .check, .radio
 	display: inline-block

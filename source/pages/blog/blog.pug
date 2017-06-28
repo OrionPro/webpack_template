@@ -23,7 +23,7 @@ block main
 				.container
 					.row
 						.header_logo
-							a(href="/" class="logo").
+							a(href="index.html" class="logo").
 								Ваш логотип
 						nav.header_nav
 							ul
@@ -32,9 +32,9 @@ block main
 									li
 										a(href=`${i.href}`)= i.title
 						.header_modal
-							a(data-modal="modal-1" data-info="Обратный звонок" href="#" class="modal active") Обратный звонок
+							a(data-effect="mfp-zoom-in" data-info="Обратный звонок" href="#popup" class="open-popup-link" title='Обратный звонок') Обратный звонок
 						.header_modal
-							a(data-modal="modal-3" data-info="Обратный звонок" href="#" class="modal active") Мобильное меню
+							a(data-effect="mfp-zoom-in" data-info="Обратный звонок" href="#popup3" class="open-popup-link" title='Обратный звонок') Мобильное меню
 						.header_title
 							h1 Страница Blog
 							p для максимального удобства

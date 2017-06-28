@@ -7,6 +7,7 @@ require("../libs/libs").tooltipster_follower();
 require("../libs/libs").tooltipster();
 require("../libs/libs").magnific_popup();
 require("../libs/libs").jqueryValidation();
+require("../libs/libs").select2();
 import modal from '../js/modal';
 import validation from '../js/validation';
 
