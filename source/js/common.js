@@ -21,7 +21,7 @@ $(document).ready( function() {
 	// Определения браузера
 	function get_name_browser() {
 		// получаем данные userAgent
-		var ua = navigator.userAgent;
+		const ua = navigator.userAgent;
 		// с помощью регулярок проверяем наличие текста,
 		// соответствующие тому или иному браузеру
 		if (ua.search(/Chrome/) > 0) return 'Google Chrome';

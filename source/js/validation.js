@@ -187,7 +187,7 @@ $(document).ready(function () {
 //  Отправка форм с файлом submit
 	$("#form-file").on('submit', function (e) { // перехватываем все при событии отправки
 		if ($(this).valid()) {
-			var $data = new FormData(),
+			let $data = new FormData(),
 				form = $(this),
 				$inputs = $("#form-file").find('input[type=hidden]'),
 				$phone = $("#form-file").find('input[name=phone]'),
