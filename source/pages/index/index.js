@@ -1,5 +1,6 @@
 import common from '../../js/common';
-
+import '../../pages/index/index.pug'; //это для обновления страницы при hotreload - при npm build убрать
+import '../../pages/modal.pug'; //это для обновления страницы при hotreload - при npm build убрать
 import './index.sass';
 import animate from '../../js/animate';
 import App from '../../js/react';
@@ -27,7 +28,8 @@ $(document).ready(function () {
 		placeholder: "Выберите один или несколько тегов",
 		width: null // если null то будет шириной родителя
 	});
-
+	// Инициализация маски в input
+	$(".mask").mask("+38(999) 999-99-99");
 });
 
 $(window).resize(function () {

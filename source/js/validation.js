@@ -51,6 +51,10 @@ $(document).ready(function () {
 	$.validator.addMethod('customemail', function (value, element) {
 		return this.optional(element) || /^(([a-zA-Z0-9]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+\.)*([a-zA-Z0-9\-]|[!#$%\*\/\?\|^\{\}`~&'\+=-_])+@([a-zA-Z0-9-]+\.)+[a-zA-Z0-9-]+$/.test(value);
 	}, "Введите правильный Email");
+
+	$.validator.addMethod('customphonemask', function (value, element) {
+		return this.optional(element) || /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/.test(value);
+	}, "Введите телефон согласно маске");
 	$.each($("form"), function () {
 		$(this).validate({
 			submit: true,
@@ -87,6 +91,10 @@ $(document).ready(function () {
 					required: true,
 					customphone: "customphone"
 				},
+				phone_mask: {
+					required: true,
+					customphonemask: "customphonemask"
+				},
 				field: {
 					required: true,
 					extension: "txt|pdf|docx|doc|xlsx|gif|png|jpeg|jpe|jpg",
@@ -104,6 +112,9 @@ $(document).ready(function () {
 					required: "Введите свой email"
 				},
 				phone: {
+					required: "Введите свой телефон"
+				},
+				phone_mask: {
 					required: "Введите свой телефон"
 				},
 				field: {

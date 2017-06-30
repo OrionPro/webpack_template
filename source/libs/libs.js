@@ -24,6 +24,9 @@ exports.select2 = function () {
 	return require("select2");
 };
 
+exports.input_mask = function () {
+	return require("jquery-inputmask");
+};
 // Экспорты из папки libs
 
 exports.jqueryui = function () {

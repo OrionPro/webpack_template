@@ -23,9 +23,13 @@ if ($_POST) {
 		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Имя: ' . $name . '</div>';
 	}
 	if (isset($_POST['phone']) and $_POST['phone'] != "") {
-		$phone = $_POST['phone'];
-		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Телефон: ' . $phone . '</div>';
-	}
+        $phone = $_POST['phone'];
+        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Телефон: ' . $phone . '</div>';
+    }
+    if (isset($_POST['phone_mask']) and $_POST['phone_mask'] != "") {
+        $phone_mask = $_POST['phone_mask'];
+        $message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Телефон: ' . $phone_mask . '</div>';
+    }
 	if (isset($_POST['email']) and $_POST['email'] != "") {
 		$email = $_POST['email'];
 		$message .= '<div style="font-size: 18px; margin-bottom: 10px; padding-left: 10px">Email: ' . $email . '</div>';
