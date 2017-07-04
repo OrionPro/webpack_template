@@ -28,8 +28,6 @@ $(document).ready(function () {
 		// var title =  $(this).data('title'); // для изменения title в модалке
 		$(`.popup${id} input[name=form_name]`).val(txt);
 		// $(`.popup${id} h2`).html(title); // прописать в ссылку data-title="нужный title"
-		console.log(get_name_browser());
-
 		if (window.matchMedia("(min-width: 992px)").matches) {
 			if (get_name_browser() == "Google Chrome") {
 				$("html").addClass("modal");
