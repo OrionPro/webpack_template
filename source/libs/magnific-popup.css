@@ -157,8 +157,7 @@ button::-moz-focus-inner {
   top: 25px;
   width: 35px;
   height: 36px;
-  display: block;
-  background: url('../img/modal_close.png') 0 0 no-repeat; }
+  display: block; }
 
 .mfp-counter {
   position: absolute;

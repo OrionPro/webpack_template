@@ -2,27 +2,26 @@
 #popup.mfp-hide.white-popup.mfp-with-anim.popup
 	p.success_mail Спасибо! Ваша заявка уже обрабатывается менеджером и в ближайшее время он с вами свяжется.
 	form
+		p.modal-title.
+			Введите данные
+		p.modal-paragraph.
+			и мы Вам перезвоним
 		div
-			label Введите своё имя
 			.input_wrap
 				i.fa.fa-check
-				input(name="name" type="text")
-			label Введите свой телефон
+				input(name="name" type="text" placeholder="Имя")
 			.input_wrap
 				i.fa.fa-check
-				input(name="phone" type="text")
-			label Введите свой телефон по маске 1
+				input(name="phone" type="text" placeholder="Введите свой телефон")
 			.input_wrap
 				i.fa.fa-check
-				input(name="phone_mask" type="text" class="mask")
-			label Введите свой e-mail
+				input(name="phone_mask" type="text" class="mask" placeholder="+38(___) ___-__-__")
 			.input_wrap
 				i.fa.fa-check
-				input(name="email" type="text")
-			label Описание заяки
+				input(name="email" type="text" placeholder="E-mail")
 			.input_wrap
 				i.fa.fa-check
-				textarea(name="textarea" type="text")
+				textarea(name="textarea" type="text" placeholder="Описание заяки")
 			.select
 				.slct_arrow
 					i.fa.fa-angle-down

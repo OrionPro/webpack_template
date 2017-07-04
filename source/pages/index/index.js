@@ -10,13 +10,16 @@ $(document).ready(function () {
 	// пример анимации через библиотечку animat (но лучше анимировать через GSAP)
 	$('.our_advantages h2').animated("fadeInUp");
 	// инициализация tooltipster
-	$(".header_modal a").tooltipster({
-		plugins: ['follower'],
-		theme: 'tooltipster-shadow'
-	});
-	$(".header_logo a").tooltipster({
-		theme: 'tooltipster-light'
-	});
+	if (window.matchMedia("(min-width: 992px)").matches) {
+		$(".header_modal a").tooltipster({
+			plugins: ['follower'],
+			theme: 'tooltipster-shadow'
+		});
+		$(".header_logo a").tooltipster({
+			theme: 'tooltipster-light'
+		});
+	}
+
 	// инициализация select2
 	$(".select2").select2({
 		//minimumResultsForSearch: -1, // выключам поле ввода поиска

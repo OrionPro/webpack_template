@@ -152,7 +152,6 @@ $(document).ready(function () {
 							$('.white-popup .input_wrap i').hide();
 							$('.white-popup .success_mail').removeClass('active');
 							self.find('input[type="submit"]').attr('disabled', false);
-							//$("body").css({ "overflow": "inherit", "padding-right": "0" });
 						}, 3500);
 					}
 					if (data['form_type'] == 'normal') { //надо писать в обычных формах <input type="hidden" name="form_type" value="normal">
@@ -163,12 +162,10 @@ $(document).ready(function () {
 							},
 							type: 'inline'
 						});
-						//$("body").css({ "overflow": "hidden", "padding-right": "17px" });
 						setTimeout(function () {
 							$.magnificPopup.close();
 							$('form').find('i').hide();
 							self.find('input[type="submit"]').attr('disabled', false);
-							//$("body").css({ "overflow": "inherit", "padding-right": "0" });
 						}, 3000);
 					}
 				}
