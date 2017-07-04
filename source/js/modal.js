@@ -51,6 +51,11 @@ $(document).ready(function () {
 				$(".cd-transition-layer").addClass("closing"), $("#popup").removeClass("visible"), $(".cd-transition-layer").children().one("webkitAnimationEnd oanimationend msAnimationEnd animationend", function () {
 					$(".cd-transition-layer").removeClass("closing opening visible"), $(".cd-transition-layer").children().off("webkitAnimationEnd oanimationend msAnimationEnd animationend")
 				})
+			},
+			open: function () {
+				$(".mfp-close-btn-in .mfp-close").tooltipster({
+					theme: 'tooltipster-light'
+				});
 			}
 		},
 		closeOnBgClick: true,
