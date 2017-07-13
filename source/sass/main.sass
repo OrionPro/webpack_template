@@ -25,7 +25,7 @@ body
 	min-width: 320px
 	position: relative
 	line-height: 1.6
-	font-family: $font_RobotoRegular
+	font-family: $font_main_regular
 	overflow-x: hidden
 	color: $main_txt_color
 	-webkit-tap-highlight-color: transparent
@@ -45,7 +45,7 @@ body
 //-moz-osx-font-smoothing: grayscale
 
 h1
-	@include font($main_color, 28, $font_ROBOTO_BLACK, 1.2)
+	@include font($main_color, 28, $font_main_regular, 1.2)
 p,ul
 	padding: 0
 	margin: 0
@@ -96,10 +96,10 @@ li
 	border-radius: 5px
 	transition: 0.5s
 	p.modal-title
-		@include font($main_txt_color, 24, $font_ROBOTO_BLACK, 1.4)
+		@include font($main_txt_color, 24, $font_main_regular, 1.4)
 	p.modal-paragraph
 		margin-bottom: 10px
-		@include font($main_txt_color, 14, $font_RobotoRegular, 1.4)
+		@include font($main_txt_color, 14, $font_main_regular, 1.4)
 	&#popup-success
 		p.success_mail
 			display: block
@@ -134,7 +134,7 @@ li
 		margin-left: 5px
 		text-align: left
 		display: block
-		font-family: $font_RobotoRegular
+		font-family: $font_main_regular
 		@include fz(14)
 		color: $main_txt_color
 		&.active
@@ -168,7 +168,7 @@ li
 		&:focus
 			outline: 0
 	.success_mail
-		@include font($main_color, 24, $font_RobotoRegular, 1.1)
+		@include font($main_color, 24, $font_main_regular, 1.1)
 		display: none
 		&.active
 			display: block
@@ -204,7 +204,7 @@ li
 				border-top: none
 				cursor: pointer
 				display: block
-				@include font($auxiliary_txt_color, 18,  $font_RobotoRegular, 1.2)
+				@include font($auxiliary_txt_color, 18, $font_main_regular, 1.2)
 				padding: 7px 15px 7px 25px
 				&:hover
 					background-color: rgba(0,0,0,0.2)
@@ -218,7 +218,7 @@ li
 			padding-right: 30px
 			margin-bottom: 30px
 			display: block
-			@include font(#000, 18,  $font_RobotoRegular, 1.2)
+			@include font(#000, 18, $font_main_regular, 1.2)
 			background-color: #F4F4F4
 			line-height: 40px
 			box-shadow: 0 1px 0 rgba(0,0,2,.28)
@@ -302,7 +302,7 @@ li
 	a
 		color: #fff
 		@include fz(34)
-		font-family: $font_ROBOTO_BLACK
+		font-family: $font_main_regular
 		&:hover
 			text-decoration: none
 .header_nav
@@ -324,7 +324,7 @@ li
 	a
 		margin-left: 15px
 		padding: 10px 15px
-		@include font(#fff, 17, $font_RobotoRegular)
+		@include font(#fff, 17, $font_main_regular)
 		border: 2px solid #FFF
 		border-radius: 10px
 		text-decoration: none
