@@ -4,6 +4,7 @@
   "main": "index.js",
   "repository": {},
   "license": "MIT",
+  "author": "Стадник Александр. Melfori",
   "scripts": {
     "start": "webpack-dev-server --env development",
     "build": "webpack --env production -p",
