@@ -23,116 +23,111 @@ block main
 		div(canvas='container')
 			header(class="header")
 				.container
-					.row
-						.header_logo
-							a(href="/" class="logo" title="Логотип").
-								Ваш Логотип
-						nav.header_nav
-							ul
-								-var links = [{title:'Примеры Кухонь', href:'#'},{title:'Преимущества', href:'#'},{title:'Отзывы', href:'#'},{title:'7 3842 59 61 68', href:'tel:73842596168'}];
-								each i in links
-									li
-										a(href=i.href)= i.title
-						.header_modal
-							a(data-effect="mfp-zoom-in" data-info="Обратный звонок" href="#popup" class="open-popup-link" title='Вызов стандартного модального окна') Обратный звонок
-						.header_modal
-							a(data-effect="mfp-zoom-in" data-info="Обратный звонок" href="#popup3" class="open-popup-link active" title='Вызов примера модального окна, в виде навигации.') Мобильное меню
-						.header_title
-							h1
-								span ФУНКЦИОНАЛЬНЫЕ
-								|  ЛЕНДИНГИ НА ЗАКАЗ
-							p для максимального удобства
-						.header_bot_txt
-							p Более
-								span  400
-								|   довольных клиентов за
-								span  8 лет
-								|  успешной работы!
+					.header_logo
+						a(href="/" class="logo" title="Логотип").
+							Ваш Логотип
+					nav.header_nav
+						ul
+							-var links = [{title:'Примеры Кухонь', href:'#'},{title:'Преимущества', href:'#'},{title:'Отзывы', href:'#'},{title:'7 3842 59 61 68', href:'tel:73842596168'}];
+							each i in links
+								li
+									a(href=i.href)= i.title
+					.header_modal
+						a(data-effect="mfp-zoom-in" data-info="Обратный звонок" href="#popup" class="open-popup-link" title='Вызов стандартного модального окна') Обратный звонок
+					.header_modal
+						a(data-effect="mfp-zoom-in" data-info="Обратный звонок" href="#popup3" class="open-popup-link active" title='Вызов примера модального окна, в виде навигации.') Мобильное меню
+					.header_title
+						h1
+							span ФУНКЦИОНАЛЬНЫЕ
+							|  ЛЕНДИНГИ НА ЗАКАЗ
+						p для максимального удобства
+					.header_bot_txt
+						p Более
+							span  400
+							|   довольных клиентов за
+							span  8 лет
+							|  успешной работы!
 			// Секция  our_advantages
 			section#our_advantages.our_advantages
 				.container
+					h2 Наши преимущества
 					.row
-						h2 Наши преимущества
-						.clearfix
-							.our_advantages_item.col-lg-4.col-md-6
-								.our_advantages_item_img
-									i.fa.fa-users
-								h3 Заголовок
-								p Индивидуальный подход к каждому клиенту
-							.our_advantages_item.col-lg-4.col-md-6
-								.our_advantages_item_img
-									i.fa.fa-diamond
-								h3 Заголовок
-								p Неповторимость и практичность каждого проекта мебели
-							.our_advantages_item.col-lg-4.col-md-6
-								.our_advantages_item_img
-									i.fa.fa-list-ol
-								h3 Заголовок
-								p Многообразие материалов и стилевых решений
-							.our_advantages_item.col-lg-4.col-md-6
-								.our_advantages_item_img
-									i.fa.fa-pencil
-								h3 Заголовок
-								p Для вас бесплатно: замер, дизайн-проект, доставка и монтаж
-							.our_advantages_item.col-lg-4.col-md-6
-								.our_advantages_item_img
-									i.fa.fa-credit-card-alt
-								h3 Заголовок
-								p Возможность оформления мебели в кредит
-							.our_advantages_item.col-lg-4.col-md-6
-								.our_advantages_item_img
-									i.fa.fa-wrench
-								h3 Заголовок
-								p Изготовление мебели только из высококачественных материалов
+						.our_advantages_item.col-lg-4.col-md-6
+							.our_advantages_item_img
+								i.fa.fa-users
+							h3 Заголовок
+							p Индивидуальный подход к каждому клиенту
+						.our_advantages_item.col-lg-4.col-md-6
+							.our_advantages_item_img
+								i.fa.fa-diamond
+							h3 Заголовок
+							p Неповторимость и практичность каждого проекта мебели
+						.our_advantages_item.col-lg-4.col-md-6
+							.our_advantages_item_img
+								i.fa.fa-list-ol
+							h3 Заголовок
+							p Многообразие материалов и стилевых решений
+						.our_advantages_item.col-lg-4.col-md-6
+							.our_advantages_item_img
+								i.fa.fa-pencil
+							h3 Заголовок
+							p Для вас бесплатно: замер, дизайн-проект, доставка и монтаж
+						.our_advantages_item.col-lg-4.col-md-6
+							.our_advantages_item_img
+								i.fa.fa-credit-card-alt
+							h3 Заголовок
+							p Возможность оформления мебели в кредит
+						.our_advantages_item.col-lg-4.col-md-6
+							.our_advantages_item_img
+								i.fa.fa-wrench
+							h3 Заголовок
+							p Изготовление мебели только из высококачественных материалов
 			// Тест react
 			section.react
 				.container
-					.row
-						#app
+					#app
 			// Секция main_content
 			section.main_content
 				.container
-					.row
-						div Пример checkbox
-						label.check.noselect
-							input(type='checkbox')
-							i.fa.fa-1.fa-square-o
-							i.fa.fa-2.fa-check-square-o
-							span первый чек
-						label.check.noselect
-							input(type='checkbox')
-							i.fa.fa-1.fa-square-o
-							i.fa.fa-2.fa-check-square-o
-							span второй чек
-						div Пример radio button
-						label.radio.noselect
-							input(type='radio', name='radio')
-							i.fa.fa-1.fa-square-o
-							i.fa.fa-2.fa-check-square-o
-							span первый чек
-						label.radio.noselect
-							input(type='radio', name='radio', checked='')
-							i.fa.fa-1.fa-square-o
-							i.fa.fa-2.fa-check-square-o
-							span второй чек
-					.row
-						h3 Пример Select на плагине Select2
-							h4 с тегами
-								.select2-container
-									select.select2-tags.form-control(multiple)
-										option angular
-										option react
-										option vui
-										option(disabled) ember
-										option backbone
-							h4 обычный
-								.select2-container
-									select.select2
-										option angular
-										option react
-										option vui
-										option(disabled) ember
-										option backbone
+					div Пример checkbox
+					label.check.noselect
+						input(type='checkbox')
+						i.fa.fa-1.fa-square-o
+						i.fa.fa-2.fa-check-square-o
+						span первый чек
+					label.check.noselect
+						input(type='checkbox')
+						i.fa.fa-1.fa-square-o
+						i.fa.fa-2.fa-check-square-o
+						span второй чек
+					div Пример radio button
+					label.radio.noselect
+						input(type='radio', name='radio')
+						i.fa.fa-1.fa-square-o
+						i.fa.fa-2.fa-check-square-o
+						span первый чек
+					label.radio.noselect
+						input(type='radio', name='radio', checked='')
+						i.fa.fa-1.fa-square-o
+						i.fa.fa-2.fa-check-square-o
+						span второй чек
+					h3 Пример Select на плагине Select2
+						h4 с тегами
+							.select2-container
+								select.select2-tags.form-control(multiple)
+									option angular
+									option react
+									option vui
+									option(disabled) ember
+									option backbone
+						h4 обычный
+							.select2-container
+								select.select2
+									option angular
+									option react
+									option vui
+									option(disabled) ember
+									option backbone
 			// Секция  ask-form-title
 			section.intermediate
 				.container
@@ -142,21 +137,23 @@ block main
 						form#form-file.clearfix
 							.file_wrap
 								input(type='file' name='field')
-							.intermediate_item.col-lg-3.col-md-4.col-sm-4
-								.input_wrap
-									i.fa.fa-check
-									input(name='name', type='text', placeholder='Имя')
-							.intermediate_item.col-lg-3.col-md-4.col-sm-4
-								.input_wrap
-									i.fa.fa-check
-									input(name='email', type='text', placeholder='Почта')
-							.intermediate_item.col-lg-3.col-md-4.col-sm-4
-								.input_wrap
-									i.fa.fa-check
-									input(name='phone', type='text', placeholder='Телефон')
-							input(type='hidden', name='form_name', value='')
-							input(type='hidden', name='form_type', value='normal')
-							input.col-lg-3(type='submit', value='Записаться')
+							.row
+								.intermediate_item.col-lg-3.col-md-4.col-sm-4
+									.input_wrap
+										i.fa.fa-check
+										input(name='name', type='text', placeholder='Имя')
+								.intermediate_item.col-lg-3.col-md-4.col-sm-4
+									.input_wrap
+										i.fa.fa-check
+										input(name='email', type='text', placeholder='Почта')
+								.intermediate_item.col-lg-3.col-md-4.col-sm-4
+									.input_wrap
+										i.fa.fa-check
+										input(name='phone', type='text', placeholder='Телефон')
+								input(type='hidden', name='form_name', value='')
+								input(type='hidden', name='form_type', value='normal')
+								.intermediate_item.col-lg-3
+									input(type='submit', value='Записаться')
 			// Секция footer
 			footer.footer
 		div(off-canvas='id-1 left shift')
