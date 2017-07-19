@@ -11,8 +11,8 @@
 			top: 10px
 			i
 				color: #000000
-/* Large Devices, Wide Screens */
-@media only screen and (max-width : 1200px)
+// Large devices (desktops, less than 1200px)
+@media only screen and (max-width : 1199px)
 	/**/
 	// для фиксированного сайта
 	// body
@@ -25,8 +25,8 @@
 			.modal_form_input_wrap
 				display: inline-block
 
-/* Medium Devices, Desktops */
-@media only screen and (max-width : 992px)
+// Medium devices (tablets, less than 992px)
+@media only screen and (max-width : 991px)
 	/**/
 	.header_nav
 		display: none
@@ -37,8 +37,8 @@
 		margin-top: 40px
 	nav[canvas]
 		display: block
-/* Small Devices, Tablets */
-@media only screen and (max-width : 768px)
+// Small devices (landscape phones, less than 768px)
+@media only screen and (max-width : 767px)
 	
 	/*Disable Animation on Mobile Devices*/
 	.animated
@@ -78,16 +78,20 @@
 	.white-popup
 		textarea
 			min-height: 80px
-/* Extra Small Devices, Phones */
-@media only screen and (max-width : 520px)
+// Extra small devices (portrait phones, less than 576px)
+@media only screen and (max-width: 575px)
 	/**/
 
+// Extra small devices (portrait phones, less than 521px)
+@media only screen and (max-width : 520px)
+	/**/
 	.white-popup
 		width: 100%
 		padding: 20px 10px 20px 10px
 	.white-popup
 		input[type=submit]
 			width: 100%
+// Extra small devices (portrait phones, less than 481px)
 @media only screen and (max-width : 480px)
 	/**/
 	.our_advantages .our_advantages_item .our_advantages_item_img i
