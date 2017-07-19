@@ -321,6 +321,15 @@ li
 				transition: .5s
 .header_modal
 	display: inline-block
+	&.last
+		a
+			&:after
+				@include css-triangle(#fff,up,10px)
+				top: calc(50% - 5px)
+				right: -20px
+				transition: 0.5s
+			&:hover:after
+				transform: rotate(180deg)
 	a
 		margin-left: 15px
 		padding: 10px 15px
@@ -329,6 +338,7 @@ li
 		border-radius: 10px
 		text-decoration: none
 		transition: .5s
+		position: relative
 		&:hover
 			border: 2px solid transparent
 			background-color: #ff9600
