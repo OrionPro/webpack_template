@@ -7,6 +7,11 @@ import animate from '../../js/animate';
 import App from '../../js/react';
 
 $(document).ready(function () {
+
+	$(".sticky").sticky({
+		topSpacing: 0
+	});
+
 	// пример анимации через библиотечку animat (но лучше анимировать через GSAP)
 	$('.our_advantages h2').animated("fadeInUp");
 	// инициализация tooltipster

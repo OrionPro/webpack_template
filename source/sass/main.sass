@@ -363,6 +363,10 @@ li
 	p
 		@include fz(25)
 		color: #fff
+	.is-sticky
+		p
+			z-index: 1000 !important
+			background: #000
 // Бутерброд
 .no-touch #nav-button-label
 	&:hover .nav-line
@@ -468,6 +472,8 @@ body input:required:valid,
 body textarea:required:valid
 	color: #666
 // Оформление слайдбара
+[canvas]
+	transform: inherit
 [off-canvas]
 	transition: transform 0.4s
 	overflow: auto
@@ -512,8 +518,8 @@ nav[canvas]
 .our_advantages
 	min-height: 630px
 	background-color: #fff
+	padding-top: 75px
 	h2
-		margin-top: 75px
 		color: #626262
 		text-align: center
 		font-size: 35px

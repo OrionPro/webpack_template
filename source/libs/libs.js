@@ -57,5 +57,8 @@ exports.animate_modal_js = function () {
 	return require("../libs/anim-modal");
 };
 
+exports.sticky = function () {
+	return require("../libs/jquery.sticky");
+};
 
 

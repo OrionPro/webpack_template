@@ -9,6 +9,7 @@ require("../libs/libs").tooltipster();
 require("../libs/libs").jqueryValidation();
 require("../libs/libs").select2();
 require("../libs/libs").input_mask();
+require("../libs/libs").sticky();
 import validation from '../js/validation';
 import modal from '../js/modal';
 
