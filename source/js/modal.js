@@ -27,7 +27,7 @@ $(document).ready(function () {
 		let txt = $(this).data('info');
 		// var title =  $(this).data('title'); // для изменения title в модалке
 		$(`.popup${id} input[name=form_name]`).val(txt);
-		// $(`.popup${id} h2`).html(title); // прописать в ссылку data-title="нужный title"
+		// $(`.popup${id} .modal-title`).html(title); // прописать в ссылку data-title="нужный title"
 		if (window.matchMedia("(min-width: 992px)").matches) {
 			if (get_name_browser() == "Google Chrome") {
 				$("html").addClass("modal");
