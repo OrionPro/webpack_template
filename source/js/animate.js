@@ -1,5 +1,6 @@
 // подключение animate.js
 require("../libs/libs").greenSock();
+require("../libs/libs").DrawSVG();
 
 class Animation {
 	constructor() {
@@ -12,7 +13,9 @@ class Animation {
 			y: -100,
 			opacity: 0,
 			ease: Power4.easeOut
-		}, '+=0.3');
+		}, '+=0.3')
+			.from('#path4297', 1,
+			{drawSVG: "50% 50%"}, 0.2);
 
 	}
 
