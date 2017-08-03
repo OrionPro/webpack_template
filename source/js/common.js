@@ -17,7 +17,7 @@ import '../sass/main.sass';
 import functions from '../js/_functions.js';
 
 
-$(document).ready( function() {
+$(document).ready(function () {
 
 	// Определения браузера
 	function get_name_browser() {
@@ -25,6 +25,7 @@ $(document).ready( function() {
 		const ua = navigator.userAgent;
 		// с помощью регулярок проверяем наличие текста,
 		// соответствующие тому или иному браузеру
+		if (ua.search(/Edge/) > 0) return 'Edge';
 		if (ua.search(/Chrome/) > 0) return 'Google Chrome';
 		if (ua.search(/Firefox/) > 0) return 'Firefox';
 		if (ua.search(/Opera/) > 0) return 'Opera';
@@ -42,12 +43,11 @@ $(document).ready( function() {
 		// $(".website_promotion .website_promotion_decor").css("bottom", "-177px");
 		// $(".cost_of_online_store .cost_of_online_store_links_item").css("margin-right", "72px");
 	}
-	if (get_name_browser() == "Safari") {
-		console.log("Это Сафари");
+
+	if (get_name_browser() == "Trident" || get_name_browser() == "Internet Explorer" || get_name_browser() == "Edge") {
+		$('.check i, .radio i').css("margin-top", "2px")
 	}
-	if (get_name_browser() == "Google Chrome") {
-		console.log("Это Хром");
-	}
+
 	// для инициализации tooltips
 	// $( document ).tooltip({
 	//   track: true
@@ -97,10 +97,10 @@ $(document).ready( function() {
 
 });
 
-$(window).resize(function() {
+$(window).resize(function () {
 
 });
 
-$(window).scroll(function() {
+$(window).scroll(function () {
 
 });

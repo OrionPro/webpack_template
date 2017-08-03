@@ -549,26 +549,19 @@ nav[canvas]
 		width: 300px
 // Пример checkbox
 .check, .radio
-	display: inline-block
-	vertical-align: middle
-	color: $main_color
+	display: inline-flex
+	align-items: center
+	color: #000
 	cursor: pointer
-	position: relative
+	font-size: 14px
+	user-select: none
 	i
-		display: inline-block
-		vertical-align: middle
-		width: 16px
-		height: 16px
-		&.fa-2
-			position: relative
-			right: -1px
-			top: -2px
-		&.fa-1
-			position: relative
-			top: -2px
+		width: 11px
+		display: inline-flex
+		margin-right: 10px
 	span
-		display: inline-block
-		font-size: 20px
+		display: inline-flex
+		font-size: 14px
 	input[type=checkbox],
 	input[type=radio]
 		display: none
@@ -578,7 +571,7 @@ nav[canvas]
 			&.fa-1
 				display: none
 			&.fa-2
-				display: inline-block
+				display: inline-flex
 // Секция 
 .intermediate
 	text-align: center

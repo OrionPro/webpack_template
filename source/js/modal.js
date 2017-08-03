@@ -5,6 +5,7 @@ $(document).ready(function () {
 		const ua = navigator.userAgent;
 		// с помощью регулярок проверяем наличие текста,
 		// соответствующие тому или иному браузеру
+		if (ua.search(/Edge/) > 0) return 'Edge';
 		if (ua.search(/Chrome/) > 0) return 'Google Chrome';
 		if (ua.search(/Firefox/) > 0) return 'Firefox';
 		if (ua.search(/Opera/) > 0) return 'Opera';
