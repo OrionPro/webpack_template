@@ -48,6 +48,5 @@ $(window).scroll(function () {
 
 });
 
-
 $(".loader_inner").fadeOut();
 $(".loader").fadeOut("fast");
