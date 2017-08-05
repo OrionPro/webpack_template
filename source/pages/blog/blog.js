@@ -8,8 +8,7 @@ import animate from '../../js/animate_blog';
 console.log('in blog.js');
 
 $(document).ready( function() {
-
-
+	$("body").addClass("blog extinguisher-transition");
 });
 
 $(window).resize(function() {

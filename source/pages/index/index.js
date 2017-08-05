@@ -7,9 +7,10 @@ import animate from '../../js/animate';
 import App from '../../js/react';
 
 $(document).ready(function () {
-
+	$("body").addClass("index ink-transition");
 	$(".sticky").sticky({
-		topSpacing: 0
+		topSpacing: 0,
+		widthFromWrapper: false
 	});
 
 	// пример анимации через библиотечку animat (но лучше анимировать через GSAP)

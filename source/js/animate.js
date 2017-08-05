@@ -9,7 +9,7 @@ class Animation {
 	}
 
 	description() {
-		this.tl1.from('.header_title', 0.7, {
+		this.tl1.from('.top-section__title', 0.7, {
 			y: -100,
 			opacity: 0,
 			ease: Power4.easeOut
@@ -31,7 +31,7 @@ class Animation {
 	}
 
 	play() {
-		if (this.activeSection('header',0, 500)) {
+		if (this.activeSection('top-section',0, 500)) {
 			this.tl1.resume();
 		}
 	}
