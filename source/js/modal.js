@@ -41,6 +41,7 @@ $(document).ready(function () {
 		callbacks: {
 			beforeOpen: function () {
 				this.st.mainClass = this.st.el.attr('data-effect');
+				$('input:not("[type=submit], [type=hidden], .select2-search__field")').removeClass('tooltipster-show').tooltipster('close');
 			},
 			close: function () {
 				$('.white-popup i').hide();
