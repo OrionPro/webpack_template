@@ -1,14 +1,14 @@
 import ReactDOM from 'react-dom';
-import React, {Component} from 'react';
+import React from 'react';
 
-export default class App extends Component {
-  render() {
+ function App ({name,who}) {
 	return (
-	  <h2>Здесь работает React :)!</h2>
+	  <h2>{name}
+		  <span>{who}</span>
+	  </h2>
 	)
-  }
 }
 ReactDOM.render(
-	<App/>,
+	<App name = "Здесь работает " who="React"/>,
   document.getElementById('app')
 );
