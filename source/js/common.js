@@ -18,7 +18,6 @@ import functions from '../js/_functions.js';
 
 
 $(document).ready(function () {
-
 	// Определения браузера
 	function get_name_browser() {
 		// получаем данные userAgent
