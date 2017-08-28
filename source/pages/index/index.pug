@@ -127,6 +127,21 @@ block main
 						input(type='hidden', name='form_type', value='normal')
 						.intermediate_item.col-lg-3
 							input(type='submit', value='Записаться')
-
+			h3 Пример табов с вложенностью ещё таба
+			.tabs-items-wrap
+				button.tabs-item.active Мужские размеры
+				button.tabs-item Женские размеры
+			.tabs-wrap.active
+				p Контент таба 1
+			.tabs-wrap
+				p Контент таба 2
+				h4 Вложенный таб
+				.tabs-items-wrap-inner
+					button.tabs-item.active Мужские размеры 2
+					button.tabs-item Женские размеры 2
+					.tabs-wrap-inner.active
+						p Контент таба 3
+					.tabs-wrap-inner
+						p Контент таба 4
 
 

@@ -480,6 +480,34 @@ label
 	color: #666
 	opacity: 1
 
+.tabs-item
+	color: blue
+.tabs-item.active
+	color: red
+
+.tabs-wrap
+	display: none
+
+.tabs-wrap.active
+	display: block
+	animation: fade
+	animation-duration: 1s
+
+.tabs-wrap-inner
+	display: none
+
+.tabs-wrap-inner.active
+	display: block
+	animation: fade
+	animation-duration: 1s
+@keyframes fade
+	from
+		opacity: 0
+		transform: translateY(20px)
+	to
+		opacity: 1
+		transform: translateY(0)
+
 body input:focus:required:invalid,
 body textarea:focus:required:invalid
 	color: #666

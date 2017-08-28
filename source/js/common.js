@@ -16,8 +16,40 @@ import modal from '../js/modal';
 import '../sass/main.sass';
 import functions from '../js/_functions.js';
 
+function tabs(obj) {
+	const buttons = document.querySelectorAll(obj.btn);
+	const bodyTabs = document.querySelectorAll(obj.body);
+
+	let func = function(e){
+		"use strict";
+		e.preventDefault();
+		[].forEach.call(buttons, item => item.classList.remove(obj.class));
+		this.classList.add(obj.class);
+
+		let item = [].indexOf.call(buttons,this);
+		[].forEach.call(bodyTabs, item => item.classList.remove(obj.className));
+		bodyTabs[item].classList.add(obj.className)
+	};
+
+	for(let i = buttons.length;i--;){
+		buttons[i].addEventListener('click',func);
+	}
+}
 
 $(document).ready(function () {
+	// вызов tabs
+	tabs({
+		btn:'.tabs-items-wrap > .tabs-item',
+		body:'.tabs-wrap',
+		className: 'active',
+		class:'active'
+	});
+	tabs({
+		btn:'.tabs-items-wrap-inner > .tabs-item',
+		body:'.tabs-wrap-inner',
+		className: 'active',
+		class:'active'
+	});
 	// Определения браузера
 	function get_name_browser() {
 		// получаем данные userAgent
