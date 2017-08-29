@@ -16,39 +16,38 @@ import modal from '../js/modal';
 import '../sass/main.sass';
 import functions from '../js/_functions.js';
 
+// табы tabs
 function tabs(obj) {
 	const buttons = document.querySelectorAll(obj.btn);
-	const bodyTabs = document.querySelectorAll(obj.body);
+	const bodyTabs = document.querySelectorAll(obj.tabsBody);
 
-	let func = function(e){
+	let func = function(){
 		"use strict";
-		e.preventDefault();
-		[].forEach.call(buttons, item => item.classList.remove(obj.class));
-		this.classList.add(obj.class);
-
+		for( let i = buttons.length; i--; ){
+			buttons[i].classList.remove(obj.classBtn);
+			bodyTabs[i].classList.remove(obj.classBody);
+		}
+		this.classList.add(obj.classBtn);
 		let item = [].indexOf.call(buttons,this);
-		[].forEach.call(bodyTabs, item => item.classList.remove(obj.className));
-		bodyTabs[item].classList.add(obj.className)
+		bodyTabs[item].classList.add(obj.classBody)
 	};
 
-	for(let i = buttons.length;i--;){
-		buttons[i].addEventListener('click',func);
-	}
+	[].forEach.call(buttons,item => item.addEventListener('click',func));
 }
 
 $(document).ready(function () {
 	// вызов tabs
 	tabs({
 		btn:'.tabs-items-wrap > .tabs-item',
-		body:'.tabs-wrap',
-		className: 'active',
-		class:'active'
+		tabsBody:'.tabs-wrap',
+		classBody:'active',
+		classBtn: 'active'
 	});
 	tabs({
 		btn:'.tabs-items-wrap-inner > .tabs-item',
-		body:'.tabs-wrap-inner',
-		className: 'active',
-		class:'active'
+		tabsBody:'.tabs-wrap-inner',
+		classBody: 'active',
+		classBtn:'active'
 	});
 	// Определения браузера
 	function get_name_browser() {

@@ -464,6 +464,13 @@ label
 		transition: .5s
 		top: 14px
 
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
 *::-webkit-input-placeholder
 	color: #666
 	opacity: 1
@@ -480,27 +487,41 @@ label
 	color: #666
 	opacity: 1
 
+// внешний вид табов и анимация
+.tabs-items-wrap
+	margin-bottom: 10px
 .tabs-item
-	color: blue
-.tabs-item.active
-	color: red
-
+	&.active
+		background-color: #fff
+		border: 1px solid $main_color
+		color: $main_color
 .tabs-wrap
 	display: none
+	padding: 20px
+	background-color: rgba(255, 255, 255,0.5)
 
 .tabs-wrap.active
 	display: block
-	animation: fade
-	animation-duration: 1s
+	animation: fade-bot
+	animation-duration: 0.7s
 
 .tabs-wrap-inner
 	display: none
+	padding: 20px
 
 .tabs-wrap-inner.active
 	display: block
 	animation: fade
-	animation-duration: 1s
+	animation-duration: 0.7s
+	animation-delay: 0.3s
+	animation-fill-mode: backwards
+
 @keyframes fade
+	from
+		opacity: 0
+	to
+		opacity: 1
+@keyframes fade-bot
 	from
 		opacity: 0
 		transform: translateY(20px)
@@ -508,12 +529,6 @@ label
 		opacity: 1
 		transform: translateY(0)
 
-body input:focus:required:invalid,
-body textarea:focus:required:invalid
-	color: #666
-body input:required:valid,
-body textarea:required:valid
-	color: #666
 // Оформление слайдбара
 [canvas]
 	transform: inherit
