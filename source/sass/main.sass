@@ -20,6 +20,30 @@ html, body
 	&.slidebars
 		width: 100%
 		overflow: hidden !important
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
 body
 	margin: 0
 	min-width: 320px
@@ -283,6 +307,175 @@ li
 #form-file
 	.file_wrap
 		margin-bottom: 20px
+
+// Бутерброд
+.no-touch #nav-button-label
+	&:hover .nav-line
+		background: $main_bg_color
+.touch #nav-button-label
+	&:active .nav-line
+		background: $main_bg_color
+#nav-button-label
+	height: 35px
+	width: 50px
+	transition: .4s
+	margin-top: 6px
+	cursor: pointer
+	position: relative
+	z-index: 1002
+	pointer-events: all
+
+.nav-on .nav-line:first-child,
+.nav-on .nav-line:last-child
+	transition: .5s
+	width: 0
+	opacity: 0
+	left: 50%
+	top: 11px
+.nav-on
+	#nav-button-label
+		.nav-line
+			margin: 0
+	.nav-line
+		&:nth-child(2)
+			-webkit-transition: .5s
+			-o-transition: .5s
+			transition: .5s
+			-webkit-transform: rotate(45deg)
+			-ms-transform: rotate(45deg)
+			-o-transform: rotate(45deg)
+			transform: rotate(45deg)
+		&:nth-child(3)
+			-webkit-transition: .5s
+			-o-transition: .5s
+			transition: .5s
+			-webkit-transform: rotate(-45deg)
+			-ms-transform: rotate(-45deg)
+			-o-transform: rotate(-45deg)
+			transform: rotate(-45deg)
+label
+	display: inline-block
+	max-width: 100%
+	margin-bottom: 5px
+	font-weight: 700
+
+.nav-line
+	display: block
+	height: 3px
+	background: #fff
+	position: absolute
+	left: 0
+	width: 100%
+	transition: 2s
+	&.active
+		background: $main_color
+	&:nth-child(2)
+		-webkit-transition: .5s
+		-o-transition: .5s
+		transition: .5s
+		top: 14px
+	&:nth-child(1)
+		-webkit-transition: .5s
+		-o-transition: .5s
+		transition: .5s
+		top: 0
+	&:nth-child(4)
+		-webkit-transition: .5s
+		-o-transition: .5s
+		transition: .5s
+		top: 28px
+	&:nth-child(3)
+		-webkit-transition: .5s
+		-o-transition: .5s
+		transition: .5s
+		top: 14px
+
+// внешний вид табов и анимация
+.tabs-items-wrap
+	margin-bottom: 10px
+.tabs-item
+	&.active
+		background-color: #fff
+		border: 1px solid $main_color
+		color: $main_color
+.tabs-wrap
+	display: none
+	padding: 20px
+	background-color: rgba(255, 255, 255,0.5)
+
+.tabs-wrap.active
+	display: block
+	animation: fade-bot
+	animation-duration: 0.7s
+
+.tabs-wrap-inner
+	display: none
+	padding: 20px
+
+.tabs-wrap-inner.active
+	display: block
+	animation: fade
+	animation-duration: 0.7s
+	animation-delay: 0.3s
+	animation-fill-mode: backwards
+
+@keyframes fade
+	from
+		opacity: 0
+	to
+		opacity: 1
+@keyframes fade-bot
+	from
+		opacity: 0
+		transform: translateY(20px)
+	to
+		opacity: 1
+		transform: translateY(0)
+
+// Оформление слайдбара
+[canvas]
+	transform: inherit
+[off-canvas]
+	transition: transform 0.4s
+	overflow: auto
+	-webkit-overflow-scrolling: touch
+[off-canvas*=left]
+	width: 255px
+[canvas=container]
+	background-color: transparent
+	-webkit-tap-highlight-color: transparent
+	&.flex
+		display: flex
+		flex-direction: column
+		height: 100%
+		//внешний вид скроллбара
+		scrollbar-base-color: $main_color   //для IE
+		scrollbar-arrow-color: $main_color	//для IE
+		//внешний вид скроллбара для -webkit- остальное тут https://poselab.com/en/blog/custom-scrollbars-in-webkit/
+		&::-webkit-scrollbar
+			width: 12px
+		&::-webkit-scrollbar-thumb
+			background-color: $main_color
+			&:hover
+				background-color: darken($main_color, 10%)
+		&::-webkit-scrollbar-track-piece
+			background-color: transparent
+nav[canvas]
+	position: fixed	
+	top: 20px
+	left: 20px
+	display: none
+	z-index: 100
+[class*=js-open-], [class*=js-toggle-], [class*=js-close-]
+	cursor: pointer
+[off-canvas]
+	ul
+		&.menu
+			margin: 0
+			padding: 0
+			display: block
+			list-style: none
+
 // Header
 .header
 	width: 100%
@@ -382,196 +575,6 @@ li
 			background: #000
 .top-section__circle
 	flex: 0 0 auto
-// Бутерброд
-.no-touch #nav-button-label
-	&:hover .nav-line
-		background: $main_bg_color
-.touch #nav-button-label
-	&:active .nav-line
-		background: $main_bg_color
-#nav-button-label
-	height: 35px
-	width: 50px
-	transition: .4s
-	margin-top: 6px
-	cursor: pointer
-	position: relative
-	z-index: 1002
-	pointer-events: all
-
-.nav-on .nav-line:first-child,
-.nav-on .nav-line:last-child
-	transition: .5s
-	width: 0
-	opacity: 0
-	left: 50%
-	top: 11px
-.nav-on
-	#nav-button-label
-		.nav-line
-			margin: 0
-	.nav-line
-		&:nth-child(2)
-			-webkit-transition: .5s
-			-o-transition: .5s
-			transition: .5s
-			-webkit-transform: rotate(45deg)
-			-ms-transform: rotate(45deg)
-			-o-transform: rotate(45deg)
-			transform: rotate(45deg)
-		&:nth-child(3)
-			-webkit-transition: .5s
-			-o-transition: .5s
-			transition: .5s
-			-webkit-transform: rotate(-45deg)
-			-ms-transform: rotate(-45deg)
-			-o-transform: rotate(-45deg)
-			transform: rotate(-45deg)
-label
-	display: inline-block
-	max-width: 100%
-	margin-bottom: 5px
-	font-weight: 700
-
-.nav-line
-	display: block
-	height: 3px
-	background: #fff
-	position: absolute
-	left: 0
-	width: 100%
-	transition: 2s
-	&.active
-		background: $main_color
-	&:nth-child(2)
-		-webkit-transition: .5s
-		-o-transition: .5s
-		transition: .5s
-		top: 14px
-	&:nth-child(1)
-		-webkit-transition: .5s
-		-o-transition: .5s
-		transition: .5s
-		top: 0
-	&:nth-child(4)
-		-webkit-transition: .5s
-		-o-transition: .5s
-		transition: .5s
-		top: 28px
-	&:nth-child(3)
-		-webkit-transition: .5s
-		-o-transition: .5s
-		transition: .5s
-		top: 14px
-
-body input:focus:required:invalid,
-body textarea:focus:required:invalid
-	color: #666
-body input:required:valid,
-body textarea:required:valid
-	color: #666
-
-*::-webkit-input-placeholder
-	color: #666
-	opacity: 1
-
-*:-moz-placeholder
-	color: #666
-	opacity: 1
-
-*::-moz-placeholder
-	color: #666
-	opacity: 1
-
-*:-ms-input-placeholder
-	color: #666
-	opacity: 1
-
-// внешний вид табов и анимация
-.tabs-items-wrap
-	margin-bottom: 10px
-.tabs-item
-	&.active
-		background-color: #fff
-		border: 1px solid $main_color
-		color: $main_color
-.tabs-wrap
-	display: none
-	padding: 20px
-	background-color: rgba(255, 255, 255,0.5)
-
-.tabs-wrap.active
-	display: block
-	animation: fade-bot
-	animation-duration: 0.7s
-
-.tabs-wrap-inner
-	display: none
-	padding: 20px
-
-.tabs-wrap-inner.active
-	display: block
-	animation: fade
-	animation-duration: 0.7s
-	animation-delay: 0.3s
-	animation-fill-mode: backwards
-
-@keyframes fade
-	from
-		opacity: 0
-	to
-		opacity: 1
-@keyframes fade-bot
-	from
-		opacity: 0
-		transform: translateY(20px)
-	to
-		opacity: 1
-		transform: translateY(0)
-
-// Оформление слайдбара
-[canvas]
-	transform: inherit
-[off-canvas]
-	transition: transform 0.4s
-	overflow: auto
-	-webkit-overflow-scrolling: touch
-[off-canvas*=left]
-	width: 255px
-[canvas=container]
-	background-color: transparent
-	-webkit-tap-highlight-color: transparent
-	&.flex
-		display: flex
-		flex-direction: column
-		height: 100%
-		//внешний вид скроллбара
-		scrollbar-base-color: $main_color   //для IE
-		scrollbar-arrow-color: $main_color	//для IE
-		//внешний вид скроллбара для -webkit- остальное тут https://poselab.com/en/blog/custom-scrollbars-in-webkit/
-		&::-webkit-scrollbar
-			width: 12px
-		&::-webkit-scrollbar-thumb
-			background-color: $main_color
-			&:hover
-				background-color: darken($main_color, 10%)
-		&::-webkit-scrollbar-track-piece
-			background-color: transparent
-nav[canvas]
-	position: fixed	
-	top: 20px
-	left: 20px
-	display: none
-	z-index: 100
-[class*=js-open-], [class*=js-toggle-], [class*=js-close-]
-	cursor: pointer
-[off-canvas]
-	ul
-		&.menu
-			margin: 0
-			padding: 0
-			display: block
-			list-style: none
 // Секция our_advantages
 .our_advantages
 	min-height: 630px
