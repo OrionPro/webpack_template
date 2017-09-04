@@ -17,11 +17,11 @@ $(document).ready(function () {
 	$('.our_advantages h2').animated("fadeInUp");
 	// инициализация tooltipster
 	if (window.matchMedia("(min-width: 992px)").matches) {
-		$(".header_modal a").tooltipster({
+		$(".header__modal a").tooltipster({
 			plugins: ['follower'],
 			theme: 'tooltipster-shadow'
 		});
-		$(".header_logo a").tooltipster({
+		$(".header__logo a").tooltipster({
 			theme: 'tooltipster-light'
 		});
 	}
