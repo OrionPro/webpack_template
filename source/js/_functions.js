@@ -97,17 +97,23 @@ $(document).ready(function () {
 
 
 	// Select в модальном окне
-	$(document).click(function () {
+	$(document).click(function (event) {
+		if ($(event.target).closest(".select").length)
+			return;
 		$('.slct').removeClass('active');
 		$('.slct_arrow').removeClass('active');
 		$('.slct').parent().find('.drop').slideUp("fast");
+		event.stopPropagation();
+	});
+	$('.slct_arrow').on('click', function () {
+		$(this).siblings('.slct').trigger('click');
 	});
 	$('.slct').click(function () {
 		/* Заносим выпадающий список в переменную */
 		var dropBlock = $(this).parent().find('.drop');
 		//  закрываем все открытые
 		$('.slct').removeClass('active').parent().find('.drop').slideUp("fast");
-
+		$('.slct').siblings('.slct_arrow').removeClass('active');
 		/* Делаем проверку: Если выпадающий блок скрыт то делаем его видимым*/
 		if (dropBlock.is(':hidden')) {
 			dropBlock.slideDown();

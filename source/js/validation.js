@@ -164,7 +164,7 @@ $(document).ready(function () {
 						});
 						setTimeout(function () {
 							$.magnificPopup.close();
-							$('form').find('i').hide();
+							$('form .input_wrap i').hide();
 							self.find('input[type="submit"]').attr('disabled', false);
 						}, 3000);
 					}
