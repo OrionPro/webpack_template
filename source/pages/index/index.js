@@ -49,5 +49,7 @@ $(window).scroll(function () {
 
 });
 
-$(".loader_inner").fadeOut();
-$(".loader").fadeOut("fast");
+setTimeout(function () {
+	$(".loader_inner").fadeOut();
+	$(".loader").fadeOut("slow");
+}, 500);
