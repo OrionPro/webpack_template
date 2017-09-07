@@ -1,4 +1,6 @@
 import common from '../../js/common';
+
+require("../../libs/libs").owl_carousel();
 import '../../pages/index/index.pug'; //это для обновления страницы при hotreload - при npm build убрать
 import '../../pages/modal.pug'; //это для обновления страницы при hotreload - при npm build убрать
 import './index.sass';
@@ -25,7 +27,13 @@ $(document).ready(function () {
 			theme: 'tooltipster-light'
 		});
 	}
-
+	//  Активация слайдера
+	$(".owl-carousel").owlCarousel({
+		loop: true,
+		items: 1,
+		dots: true,
+		nav: true
+	});
 	// инициализация select2
 	$(".select2").select2({
 		//minimumResultsForSearch: -1, // выключам поле ввода поиска
