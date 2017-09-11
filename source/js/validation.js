@@ -176,11 +176,9 @@ $(document).ready(function () {
 
 //  Отправка форм с файлом вносим input[type=file]
 	let files;
-	$('input[type=file]').change(function () {
+	$('input[type=file][name=field]').change(function () {
 		files = this.files;
-		//alert(files);
 	});
-
 //  Отправка форм с файлом submit
 	$("#form-file").on('submit', function (e) { // перехватываем все при событии отправки
 		if ($(this).valid()) {
@@ -193,6 +191,7 @@ $(document).ready(function () {
 				$textarea = $("#form-file").find('textarea');
 
 			$.each(files, function (key, value) {
+
 				$data.append(key, value);
 			});
 

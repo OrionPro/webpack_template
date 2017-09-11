@@ -63,10 +63,10 @@ if ($_POST) {
 
 	//Upload Files
 
-	foreach ($_FILES as $image) {
+	foreach ($_FILES as $file) {
 
 
-		$ext = '.' . pathinfo($image['name'], PATHINFO_EXTENSION);
+		$ext = '.' . pathinfo($file['name'], PATHINFO_EXTENSION);
         // раскомментировать если хотим сделать уникальное имя файла
 //		while (true) {
 //			$filename = uniqid(rand(), true) . $ext;
@@ -78,9 +78,9 @@ if ($_POST) {
 //		}
         $filename = $ext; // убрать этот код, когда раскомментируем wile чтобы сделать уникальное имя файла
 
-		move_uploaded_file($image['tmp_name'], __ROOT__ . '\uploads\\' . $filename);
+		move_uploaded_file($file['tmp_name'], __ROOT__ . '\uploads\\' . $filename);
 		$file_to_attach = __ROOT__ . '\uploads\\' . $filename;
-		$mailer->AddAttachment($file_to_attach, $image['name']); // если раскомментировать вверху wile и добавить в AddAttachment вместо $image['name'] - $filename то будет работать уникальное имя
+		$mailer->AddAttachment($file_to_attach, $file['name']); // если раскомментировать вверху wile и добавить в AddAttachment вместо $file['name'] - $filename то будет работать уникальное имя
 		// $images[] = __ROOT__ . '\uploads\\' . $filename;
 	}
 
