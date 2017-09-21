@@ -17,6 +17,7 @@ $(document).ready(function () {
 		// для популярных браузеров
 		return 'Не определен';
 	}
+
 	// Вешаем обработочик на свою кнопку close
 	$(document).on("click", ".mfp-close", function () {
 		let magnificPopup = $.magnificPopup.instance;
@@ -35,35 +36,37 @@ $(document).ready(function () {
 			}
 		}
 	});
-	$('.open-popup-link').magnificPopup({
-		type: 'inline',
-		removalDelay: 200,
-		callbacks: {
-			beforeOpen: function () {
-				this.st.mainClass = this.st.el.attr('data-effect');
-				$('input:not("[type=submit], [type=hidden], .select2-search__field")').removeClass('tooltipster-show').tooltipster('close');
-			},
-			close: function () {
-				$('.white-popup .input_wrap i').hide();
-				if (get_name_browser() == "Google Chrome") {
-					$("html").removeClass("modal");
+	$(document).on('click', '.open-popup-link', function () {
+		$(this).magnificPopup({
+			type: 'inline',
+			removalDelay: 200,
+			callbacks: {
+				beforeOpen: function () {
+					this.st.mainClass = this.st.el.attr('data-effect');
+					$('input:not("[type=submit], [type=hidden], .select2-search__field")').removeClass('tooltipster-show').tooltipster('close');
+				},
+				close: function () {
+					$('.white-popup .input_wrap i').hide();
+					if (get_name_browser() == "Google Chrome") {
+						$("html").removeClass("modal");
+					}
+					$('input:not("[type=submit], [type=hidden], .select2-search__field")').removeClass('tooltipster-show').tooltipster('close');
+					// Это код закрытия эффекта красивого при открытии и закрытии модалки
+					$(".cd-transition-layer").addClass("closing"), $("#popup").removeClass("visible"), $(".cd-transition-layer").children().one("webkitAnimationEnd oanimationend msAnimationEnd animationend", function () {
+						$(".cd-transition-layer").removeClass("closing opening visible"), $(".cd-transition-layer").children().off("webkitAnimationEnd oanimationend msAnimationEnd animationend")
+					})
+				},
+				open: function () {
+					$(".mfp-close-btn-in .mfp-close").tooltipster({
+						theme: 'tooltipster-light'
+					});
 				}
-				$('input:not("[type=submit], [type=hidden], .select2-search__field")').removeClass('tooltipster-show').tooltipster('close');
-				// Это код закрытия эффекта красивого при открытии и закрытии модалки
-				$(".cd-transition-layer").addClass("closing"), $("#popup").removeClass("visible"), $(".cd-transition-layer").children().one("webkitAnimationEnd oanimationend msAnimationEnd animationend", function () {
-					$(".cd-transition-layer").removeClass("closing opening visible"), $(".cd-transition-layer").children().off("webkitAnimationEnd oanimationend msAnimationEnd animationend")
-				})
 			},
-			open: function () {
-				$(".mfp-close-btn-in .mfp-close").tooltipster({
-					theme: 'tooltipster-light'
-				});
-			}
-		},
-		closeOnBgClick: true,
-		closeOnContentClick: false,
-		closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="fa fa-close"></i></button>',
-		tClose: 'Закрыть (Esc)',
+			closeOnBgClick: true,
+			closeOnContentClick: false,
+			closeMarkup: '<button title="%title%" type="button" class="mfp-close"><i class="fa fa-close"></i></button>',
+			tClose: 'Закрыть (Esc)',
+		}).magnificPopup('open');
 	});
 })
 ;

@@ -77,7 +77,13 @@ $(document).ready(function () {
 	if (get_name_browser() == "Trident" || get_name_browser() == "Internet Explorer" || get_name_browser() == "Edge") {
 		$('.check i, .radio i').css("margin-top", "2px")
 	}
+	if (get_name_browser() == "Google Chrome") {
+		console.log("Google Chrome");
 
+	}
+	if (get_name_browser() == "Safari") {
+		console.log("Safari");
+	}
 	// для инициализации tooltips
 	// $( document ).tooltip({
 	//   track: true
