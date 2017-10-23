@@ -100,7 +100,7 @@ $(document).ready(function () {
 	// });
 
 	// Скролл по классу .scroll_to и атрибуту data-scroll у кнопки к примеру (data-scroll="куда скроллим" в элементе куда скроллим ставим id потом впишем в куда скроллим)
-	// $(".scroll_to").on("clcik", function(e) {
+	// $(".scroll_to").on("click", function(e) {
 	//     e.preventDefault();
 	//     var anchor = $(this);
 	//     $('html, body').stop().animate({
