@@ -1,12 +1,14 @@
 import common from '../../js/common';
 
 require("../../libs/libs").owl_carousel();
+import Swiper from 'swiper';
 import '../../pages/index/index.pug'; //это для обновления страницы при hotreload - при npm build убрать
 import '../../pages/modal.pug'; //это для обновления страницы при hotreload - при npm build убрать
 import './index.sass';
 
 import animate from '../../js/animate';
 import App from '../../js/react';
+
 
 $(document).ready(function () {
 	$("body").addClass("index ink-transition");
@@ -33,6 +35,12 @@ $(document).ready(function () {
 		items: 1,
 		dots: true,
 		nav: true
+	});
+	// инициализация swiper слайдера
+	var swiper = new Swiper('.swiper-container', {
+		pagination: {
+			el: '.swiper-pagination',
+		},
 	});
 	// инициализация select2
 	$(".select2").select2({
