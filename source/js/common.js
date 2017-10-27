@@ -53,6 +53,11 @@ function get_name_browser() {
 	// для популярных браузеров
 	return 'Не определен';
 }
+// решаем вопрос с min-height 100% у safari до версии 11
+function heightItemSafari(obj) {
+	let heightItem =  $(obj.itemHeight).height();
+	$(obj.item).css("min-height", heightItem);
+}
 $(document).ready(function () {
 	// вызов tabs
 	tabs({
@@ -84,6 +89,10 @@ $(document).ready(function () {
 	}
 	if (get_name_browser() == "Safari") {
 		console.log("Safari");
+		// heightItemSafari({
+		// 	itemHeight: '.unique-design__wrap .unique-design__item:not(".unique-design__wrap .unique-design__item.title") img',
+		// 	item:  '.unique-design__wrap .unique-design__item.title'
+		// });
 	}
 	// для инициализации tooltips
 	// $( document ).tooltip({
