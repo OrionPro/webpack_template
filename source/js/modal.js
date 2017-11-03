@@ -1,3 +1,5 @@
+import {customScrollbar} from '../js/common';
+
 $(document).ready(function () {
 	// Определения браузера
 	function get_name_browser() {
@@ -62,6 +64,7 @@ $(document).ready(function () {
 					})
 				},
 				open: function () {
+					customScrollbar();
 					$(".mfp-close-btn-in .mfp-close").tooltipster({
 						theme: 'tooltipster-light'
 					});

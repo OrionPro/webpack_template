@@ -10,6 +10,7 @@ require("../libs/libs").jqueryValidation();
 require("../libs/libs").select2();
 require("../libs/libs").input_mask();
 require("../libs/libs").sticky();
+require("../libs/libs").mCustomScrollbar();
 
 import validation from '../js/validation';
 import modal from '../js/modal';
@@ -58,7 +59,22 @@ function heightItemSafari(obj) {
 	let heightItem =  $(obj.itemHeight).height();
 	$(obj.item).css("min-height", heightItem);
 }
+// Создаём цикл для инициализации mCustomScrollbar в нужных select
+function customScrollbar() {
+	$(document).find('.select .drop').each(function () {
+		// var log = '';
+		// var height = $(this).height();
+		// log += 'Высота элементов: ' + height;
+		// console.log(log);
+		if ($(this).height() >= 190) {
+			$(this).mCustomScrollbar({
+				theme: "my-theme"
+			});
+		}
+	});
+}
 $(document).ready(function () {
+	customScrollbar();
 	// вызов tabs
 	tabs({
 		btn:'.tabs-items-wrap > .tabs-item',
@@ -150,3 +166,5 @@ $(window).resize(function () {
 $(window).scroll(function () {
 
 });
+
+export { customScrollbar };
