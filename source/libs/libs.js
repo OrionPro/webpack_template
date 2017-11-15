@@ -34,14 +34,6 @@ exports.jqueryui = function () {
 	return require("../libs/jquery-ui.min");
 };
 
-exports.greenSock = function () {
-	return require("../libs/greenSock");
-};
-
-exports.DrawSVG = function () {
-	return require("../libs/DrawSVGPlugin");
-};
-
 exports.matchMedia = function () {
 	return require("../libs/matchMedia");
 };
@@ -60,10 +52,6 @@ exports.animate_modal_js = function () {
 
 exports.sticky = function () {
 	return require("../libs/jquery.sticky");
-};
-
-exports.owl_carousel = function () {
-	return require("../libs/owl.carousel.min");
 };
 
 exports.mCustomScrollbar = function () {
