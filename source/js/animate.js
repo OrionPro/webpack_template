@@ -1,6 +1,6 @@
 // подключение animate.js
-require("../libs/libs").greenSock();
-require("../libs/libs").DrawSVG();
+require("../libs/greenSock");
+require("../libs/DrawSVGPlugin");
 
 class Animation {
 	constructor() {
