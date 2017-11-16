@@ -110,7 +110,7 @@ $(document).ready(function () {
 	});
 	$('.slct').click(function () {
 		/* Заносим выпадающий список в переменную */
-		var dropBlock = $(this).parent().find('.drop');
+		const dropBlock = $(this).parent().find('.drop');
 		//  закрываем все открытые
 		$('.slct').removeClass('active').parent().find('.drop').slideUp("fast");
 		$('.slct').siblings('.slct_arrow').removeClass('active');
@@ -128,15 +128,17 @@ $(document).ready(function () {
 
 				/* Заносим в переменную HTML код элемента
 				 списка по которому кликнули */
-				var selectResult = $(this).html();
+				const selectAllResult = $(this).html();
+				const selectText = $(this).text();
+
+				/* Передаем значение переменной selectAllResult в ссылку которая
+				 открывает наш выпадающий список и удаляем активность */
+				$(this).parents(".select").find(".slct").removeClass('active').html(selectAllResult);
 
 				/* Находим наш скрытый инпут и передаем в него
-				 значение из переменной selectResult */
-				$(this).parents(".select").find('input').val(selectResult);
+				 значение из переменной selectText */
+				$(this).parents(".select").find('input').val(selectText);
 
-				/* Передаем значение переменной selectResult в ссылку которая
-				 открывает наш выпадающий список и удаляем активность */
-				$(this).parents(".select").find(".slct").removeClass('active').html(selectResult);
 				$(".slct_arrow").removeClass('active');
 
 				/* Скрываем выпадающий блок */
