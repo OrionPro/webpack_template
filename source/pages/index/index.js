@@ -6,10 +6,11 @@ import '../../pages/modal.pug'; //это для обновления стран�
 import './index.sass';
 
 import animate from '../../js/animate';
-import App from '../../js/react';
+//import App from '../../js/react';    // разкомментировать, чтобы включить react
 
 
 $(document).ready(function () {
+
 	$("body").addClass("index ink-transition");
 	$(".sticky").sticky({
 		topSpacing: 0,
