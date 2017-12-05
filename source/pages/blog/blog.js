@@ -1,7 +1,7 @@
 
 import common from '../../js/common';
 
-import './blog.sass';
+import './blog.styl';
 
 import animate from '../../js/animate_blog';
 console.log('in blog.js');

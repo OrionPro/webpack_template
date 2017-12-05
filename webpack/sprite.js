@@ -14,7 +14,7 @@ module.exports = function() {
 				},
 				target: {
 					image: path.resolve(__dirname, '../source/spritesmith/sprite.png'),
-					css: path.resolve(__dirname, '../source/sass/sprite.sass')
+					css: path.resolve(__dirname, '../source/stylus/sprite.styl')
 				},
 				apiOptions: {
 					cssImageRef: "~sprite/sprite.png"

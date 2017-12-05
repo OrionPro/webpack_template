@@ -3,7 +3,7 @@ import owl_carousel from '../../libs/owl.carousel.min';
 import Swiper from 'swiper/dist/js/swiper.js';
 import '../../pages/index/index.pug'; //это для обновления страницы при hotreload - при npm build убрать
 import '../../pages/modal.pug'; //это для обновления страницы при hotreload - при npm build убрать
-import './index.sass';
+import './index.styl';
 
 import animate from '../../js/animate';
 //import App from '../../js/react';    // разкомментировать, чтобы включить react

@@ -1,60 +1,80 @@
-@import "fonts"
-@import 'sprite'
+@import "fonts.styl"
+@import 'sprite.styl'
 
-$main_color: #35be70
-$auxiliary_txt_color: #443133
-$main_txt_color: #262626
-$main_bg_color: #fff
+$main_color = #35be70
+$auxiliary_txt_color = #443133
+$main_txt_color = #262626
+$main_bg_color = #fff
 
 
 
-$font_main_regular: "RobotoRegular",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
+$font_main_regular = "RobotoRegular",-apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif
 
 // Миксины font и fz переделывают px в rem
-@mixin font($color, $fz, $ff, $lh: 1.2)
+absolute-center()
+	position absolute
+	top 50%
+	left 50%
+	transform translate(-50%,-50%)
+
+absolute-all(num)
+	position absolute
+	top num
+	bottom num
+	right num
+	left num
+
+font($color, $fz, $ff, $lh = 1.2)
 	color: $color
-	font-size: $fz + px
-	font-size: ($fz/16) + rem
+	font-size: $fz px
+	font-size: ($fz/16) rem
 	font-family: $ff
 	line-height: $lh
 
-@mixin fz($font_px)
-	font-size: $font_px + px
-	font-size: ($font_px/16) + rem
+fz($font_px)
+	font-size: $font_px px
+	font-size: ($font_px/16) rem
 
-@mixin pseudo($display: block, $pos: absolute, $content: '')
+pseudo($display = block, $pos = absolute, $content = '')
 	content: $content
 	display: $display
 	position: $pos
 
-@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false)
+css-triangle($color, $direction, $size = 6px, $position = absolute, $round = false)
 	@include pseudo($pos: $position)
 	width: 0
 	height: 0
-	@if $round
+	if $round
 		border-radius: 3px
-	@if $direction == down
+	if $direction == down
 		border-left: $size solid transparent
 		border-right: $size solid transparent
 		border-top: $size solid $color
 		margin-top: 0 - round( $size / 2.5 )
-	@else if $direction == up
+	else if $direction == up
 		border-left: $size solid transparent
 		border-right: $size solid transparent
 		border-bottom: $size solid $color
 		margin-bottom: 0 - round( $size / 2.5 )
-	@else if $direction == right
+	else if $direction == right
 		border-top: $size solid transparent
 		border-bottom: $size solid transparent
 		border-left: $size solid $color
 		margin-right: -$siz
-	@else if  $direction == left
+	else if  $direction == left
 		border-top: $size solid transparent
 		border-bottom: $size solid transparent
 		border-right: $size solid $color
 		margin-left: -$size
 
-@mixin truncate($truncation-boundary)
+size(a, b = false)
+	width a
+	if b
+		height b
+	else
+		height a
+
+truncate($truncation-boundary)
 	max-width: $truncation-boundary
 	white-space: nowrap
 	overflow: hidden
@@ -67,7 +87,7 @@ $font_main_regular: "RobotoRegular",-apple-system,system-ui,BlinkMacSystemFont,"
 	background-color: $main_color
 	text-transform: none
 	border-radius: 5px
-	@include font(#fff, 16, $font_main_regular)
+	font(#fff, 16, $font_main_regular)
 	line-height: 45px
 	transition: 0.5s
 	&:hover
@@ -101,9 +121,6 @@ $font_main_regular: "RobotoRegular",-apple-system,system-ui,BlinkMacSystemFont,"
 	display: flex
 	align-items: center
 	justify-content: center
-
-	
-			
 
 
 

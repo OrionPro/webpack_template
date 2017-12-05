@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const pug = require('./webpack/pug');
 const devserver = require('./webpack/devserver');
-const sass = require('./webpack/sass');
+const stylus = require('./webpack/stylus');
 const css = require('./webpack/css');
 const fonts = require('./webpack/fonts');
 const js = require('./webpack/js');
@@ -34,12 +34,12 @@ const common = merge([
 			'../TweenLite': 'TweenLite',
 		},
 		resolve: {
-			modules: ["node_modules", "source"],
+			modules: ["node_modules", "source", "spritesmith-generated"],
 			alias: {
 				'sprite': path.resolve(__dirname, 'source/spritesmith/'),
 				'img': path.resolve(__dirname, 'source/img/'),
 				'fonts': path.resolve(__dirname, 'source/fonts/'),
-				'sass': path.resolve(__dirname, 'source/sass/')
+				'stylus': path.resolve(__dirname, 'source/stylus/')
 			}
 		},
 		plugins: [
@@ -90,7 +90,7 @@ module.exports = function(env) {
 			common,
 			js(),
 			css(),
-			sass(),
+			stylus(),
 			devserver()
 		]);
 	}

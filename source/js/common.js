@@ -15,7 +15,7 @@ require("../libs/libs").mCustomScrollbar();
 import validation from '../js/validation';
 import modal from '../js/modal';
 
-import '../sass/main.sass';
+import '../stylus/main.styl';
 import functions from '../js/_functions.js';
 
 // табы tabs
