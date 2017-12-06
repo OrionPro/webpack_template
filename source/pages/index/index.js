@@ -1,5 +1,5 @@
-import common from '../../js/common';
-import owl_carousel from '../../libs/owl.carousel.min';
+import '../../js/common';
+import '../../libs/owl.carousel.min';
 import Swiper from 'swiper/dist/js/swiper.js';
 import '../../pages/index/index.pug'; //это для обновления страницы при hotreload - при npm build убрать
 import '../../pages/modal.pug'; //это для обновления страницы при hotreload - при npm build убрать

@@ -1,9 +1,9 @@
 
-import common from '../../js/common';
+import '../../js/common';
+import '../../js/animate_blog';
 
 import './blog.styl';
 
-import animate from '../../js/animate_blog';
 console.log('in blog.js');
 
 $(document).ready( function() {
