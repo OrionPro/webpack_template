@@ -37,7 +37,7 @@ $(document).ready(function () {
 		nav: true
 	});
 	// инициализация swiper слайдера
-	var swiper = new Swiper('.swiper-container', {
+	const swiper = new Swiper('.swiper-container', {
 		pagination: {
 			el: '.swiper-pagination',
 		},
