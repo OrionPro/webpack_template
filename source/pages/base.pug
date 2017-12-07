@@ -7,6 +7,9 @@ html(class="no-js" lang="ru")
 		title
 			block title
 		link(rel="shortcut icon" href=require("../../img/favicon.png") type="image/x-icon")
+		<!--[if lt IE 9]>
+		script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+		<![endif]-->
 		style(type='text/css').
 			html .loader {
 				background: #fff;
@@ -87,8 +90,5 @@ html(class="no-js" lang="ru")
 		div(off-canvas='id-2 right push')
 		div(off-canvas='id-3 top overlay')
 		div(off-canvas='id-4 bottom shift')
-		<!--[if lt IE 9]>
-		script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
-		<![endif]-->
 
 

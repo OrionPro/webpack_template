@@ -10,7 +10,7 @@ module.exports = function(paths) {
 					use: ExtractTextPlugin.extract({
 						publicPath: '../',
 						fallback: 'style-loader',
-						use: ['css-loader?minimize=true','postcss-loader','stylus-loader'],
+						use: ['css-loader?minimize=true,sourceMap','postcss-loader?sourceMap','stylus-loader?sourceMap'],
 					}),
 				},
 				{
@@ -19,7 +19,7 @@ module.exports = function(paths) {
 					use: ExtractTextPlugin.extract({
 						publicPath: '../',
 						fallback: 'style-loader',
-						use: ['css-loader?minimize=true','postcss-loader'],
+						use: ['css-loader?minimize=true?sourceMap','postcss-loader?sourceMap'],
 					}),
 				},
 			],
