@@ -6,10 +6,10 @@ module.exports = function(paths) {
 					test: /\.styl$/,
 					include: paths,
 					use: [
-						'style-loader',
-						'css-loader',
-						'postcss-loader',
-						'stylus-loader'
+						{ loader: 'style-loader', options: { sourceMap: true } },
+						{ loader: 'css-loader', options: { sourceMap: true } },
+						{ loader: 'postcss-loader', options: { sourceMap: true } },
+						{ loader: 'stylus-loader', options: { sourceMap: true } }
 					]
 				}
 			]

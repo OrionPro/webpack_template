@@ -25,6 +25,8 @@ const common = merge([
 			'blog': PATHS.source + '/pages/blog/blog.js',
 			'test': PATHS.source + '/pages/index/index.js' // описание в test.js для чего так
 		},
+		// убрать это если не нужен source-map (а на продакшене он в принципе не нужен)
+		devtool: 'source-map',
 		output: {
 			path: PATHS.build,
 			filename: 'js/[name].js'
