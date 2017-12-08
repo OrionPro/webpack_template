@@ -5,7 +5,7 @@ import '../../pages/index/index.pug'; //это для обновления ст�
 import '../../pages/modal.pug'; //это для обновления страницы при hotreload - при npm build убрать
 import './index.styl';
 
-import animate from '../../js/animate';
+import '../../js/animate';
 //import App from '../../js/react';    // разкомментировать, чтобы включить react
 
 
