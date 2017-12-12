@@ -58,7 +58,7 @@ function get_name_browser() {
 // решаем вопрос с min-height 100% у safari до версии 11
 function heightItemSafari(obj) {
 	let heightItem =  $(obj.itemHeight).height();
-	$(obj.item).css("min-height", heightItem);
+	$(obj.item).css("min-height", heightItem + obj.itemHeightBorder);
 }
 // Создаём цикл для инициализации mCustomScrollbar в нужных select
 function customScrollbar() {
@@ -89,8 +89,6 @@ $(document).ready(function () {
 		classBody: 'active',
 		classBtn:'active'
 	});
-
-
 	if (get_name_browser() == "Trident" || get_name_browser() == "Internet Explorer" || get_name_browser() == "Firefox") {
 		// $(".from_what_is_seo .from_what_is_seo_bot_decor svg").css("bottom", "-217px");
 		// $(".website_promotion .website_promotion_decor").css("bottom", "-177px");
@@ -107,8 +105,9 @@ $(document).ready(function () {
 	if (get_name_browser() == "Safari") {
 		console.log("Safari");
 		// heightItemSafari({
-		// 	itemHeight: '.unique-design__wrap .unique-design__item:not(".unique-design__wrap .unique-design__item.title") img',
-		// 	item:  '.unique-design__wrap .unique-design__item.title'
+		// 	itemHeight: '.info-blocks__item-txt-block',
+		// 	itemHeightBorder: 2,
+		// 	item:  '.info-blocks__btn'
 		// });
 	}
 	// для инициализации tooltips
