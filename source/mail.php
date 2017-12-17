@@ -10,7 +10,11 @@ if ($_POST) {
 		$id_form = $_POST['form_type'];
 		$json['form_type'] = $id_form;
 	}
-
+    // для примера, если мы хотим проверять конкретно какая форма со значением скрытого input ( в данном случае form_name) сейчас проверяется и после success в js файле, что то надо именно там сделать (data['form_name'] == 'Посетить первое занятие') - то
+    if(isset($_POST['form_name'])){
+        $name_form = $_POST['form_name'];
+        $json['form_name'] = $name_form;
+    }
    
 	 if (isset($_POST['form_name']) and $_POST['form_name'] != "") {
 		$form_name = $_POST['form_name'];
