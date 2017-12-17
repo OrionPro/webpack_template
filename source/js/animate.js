@@ -13,9 +13,7 @@ class Animation {
 			y: -100,
 			opacity: 0,
 			ease: Power4.easeOut
-		}, '+=0.3')
-			.from('#path4297', 1,
-			{drawSVG: "50% 50%"}, 0.2);
+		}, '+=0.3');
 
 	}
 

@@ -15,9 +15,10 @@ require("../libs/libs").mCustomScrollbar();
 
 import '../js/validation';
 import '../js/modal';
+
 import '../js/_functions.js';
 
-import '../stylus/main.styl';
+import '../stylus/main.styl'; // если slidebars будет неправильно определять при загрузке ширину выдвигаемого блока ,то надо main.styl поставить выше _functions.js  но на продакшене там всё нормально и так будет
 
 // табы tabs
 function tabs(obj) {
