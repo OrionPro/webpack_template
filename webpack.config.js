@@ -23,7 +23,7 @@ const common = merge([
 		entry: {
 			'index': PATHS.source + '/pages/index/index.js',
 			'blog': PATHS.source + '/pages/blog/blog.js',
-			'test': PATHS.source + '/pages/index/index.js' // описание в test.js для чего так
+			'test': PATHS.source + '/pages/index/index.js' // если мы хотим использовать одну точку входа, то вообще не пишем здесь ничего, оставляем только одну точку index
 		},
 		// убрать это если не нужен source-map (а на продакшене он в принципе не нужен)
 		//devtool: 'source-map',
@@ -57,7 +57,7 @@ const common = merge([
 			}),
 			new HtmlWebpackPlugin({
 				filename: 'test.html',
-				chunks: ['index','common'],     // описание в test.js для чего так
+				chunks: ['index'],     // если мы делаем одну точку входа, то пишем так, используем chunk index по основной точке.
 				template: PATHS.source + '/pages/test/test.pug'
 			}),
 			new webpack.optimize.CommonsChunkPlugin({
