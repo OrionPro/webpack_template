@@ -20,7 +20,7 @@ const PATHS = {
 
 const common = merge([
 	{
-		// если мы хотим использовать одну точку входа, то вообще не пишем здесь новые страницы, оставляем только одну точку index. В HtmlWebpackPlugin пишем новые страницы, но оставляем chunks: ['index']
+		// если мы хотим использовать одну точку входа, то вообще не пишем здесь новые страницы, оставляем только одну точку index. В HtmlWebpackPlugin пишем новые страницы, но оставляем chunks: ['index'] и разумеется убираем CommonsChunkPlugin
 		entry: {
 			'index': PATHS.source + '/pages/index/index.js',
 			'blog': PATHS.source + '/pages/blog/blog.js'
