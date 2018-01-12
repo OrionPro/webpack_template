@@ -40,6 +40,7 @@ $(document).ready(function () {
 	const swiper = new Swiper('.swiper-container', {
 		pagination: {
 			el: '.swiper-pagination',
+			clickable: true,
 		},
 	});
 	// инициализация select2
