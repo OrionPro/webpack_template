@@ -1,4 +1,4 @@
-# **Шаблон на webpack - sass/pug/sprite/react**
+# **Шаблон на webpack - styl/pug/sprite/react**
 
 ***
 Установка:
