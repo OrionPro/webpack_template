@@ -1,5 +1,7 @@
+block variables
+
 doctype html
-html(class="no-js" lang="ru")
+html(lang="ru" class=stickyClass).no-js
 	head
 		meta(charset = 'utf-8')
 		meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no")
@@ -37,7 +39,7 @@ html(class="no-js" lang="ru")
 			}
 	// Весь внутренний контент страницы
 	// второй класс у body это анимация на модалке (animated-transition-effects гуглануть или спросить меня, убрав класс вернётся обычная анимация модалки, без изысков)
-	body
+	body(class=stickyClass)
 		div
 			.loader
 				.loader_inner
@@ -56,7 +58,7 @@ html(class="no-js" lang="ru")
 						i.nav-line
 						i.nav-line
 
-		div(canvas='container')
+		div(canvas='container' class=stickyClass)
 			block header
 				header(class="header")
 					.container
