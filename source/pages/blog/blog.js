@@ -7,7 +7,7 @@ import './blog.styl';
 console.log('in blog.js');
 
 $(document).ready( function() {
-	$("body").addClass("blog extinguisher-transition");
+	$("body").addClass("extinguisher-transition");
 });
 
 $(window).resize(function() {

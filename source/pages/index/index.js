@@ -11,7 +11,7 @@ import '../../js/animate';
 
 $(document).ready(function () {
 
-	$("body").addClass("index ink-transition");
+	$("body").addClass("ink-transition");
 	$(".sticky").sticky({
 		topSpacing: 0,
 		widthFromWrapper: false
