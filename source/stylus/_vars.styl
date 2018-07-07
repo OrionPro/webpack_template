@@ -79,10 +79,13 @@ truncate($truncation-boundary)
 	white-space: nowrap
 	overflow: hidden
 	text-overflow: ellipsis
-.main_btn
+.main-btn
 	min-width: 272px
 	height: 49px
 	padding: 0 5px
+	display: inline-flex
+	justify-content: center
+	align-items: center
 	border: 1px solid transparent
 	background-color: $main_color
 	text-transform: none
@@ -108,7 +111,9 @@ truncate($truncation-boundary)
 		color: $main_color
 		text-decoration: none
 		outline: 0
-
+button
+	&.main-btn
+		display: inline-block
 .center
 	text-align: center
 .left
